@@ -1,7 +1,14 @@
 (function () {
   "use strict";
   var G = window.GUIDE;
-  var state = { county: null, method: null, evDay: null, tab: "statewide", house: "all" };
+  var state = { method: null, evDay: null, tab: "statewide" };
+  /* where the person votes; saved only in this browser */
+  function load(k) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : null; } catch (e) { return null; } }
+  function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  var profile = load("uvg-profile-v1") || {};
+  profile.picks = profile.picks || {};
+  var marks = load("uvg-marks-v1") || {};
+  function saveProfile() { save("uvg-profile-v1", profile); }
 
   /* ---------- icons (simple line drawings) ---------- */
   function icon(name, size) {
@@ -21,7 +28,10 @@
       check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
       cal: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
       share: '<path d="M12 3v12"/><path d="M7 8l5-5 5 5"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/>',
-      news: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h10M7 17h6"/>'
+      news: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h10M7 17h6"/>',
+      search: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
+      print: '<path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/>',
+      back: '<path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/>'
     }[name] || "";
     return '<svg width="' + s + '" height="' + s + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + p + "</svg>";
   }
@@ -118,8 +128,8 @@
   }
   function renderPlan(animate) {
     var card = $("plan-card");
-    if (!state.county || !state.method) { card.hidden = true; return; }
-    var c = G.counties[state.county] || null, L = G.links, t = todaySC(), steps = [], title, sub;
+    if (!profile.county || profile.county === "all" || !state.method) { card.hidden = true; return; }
+    var c = G.counties[profile.county] || null, L = G.links, t = todaySC(), steps = [], title, sub;
     var reg = { h: "Make sure you're registered", b: "<p>It takes about a minute, and it also shows your polling place. " + link(L.myVoterInfo, "Check my registration") + "</p>" };
 
     if (state.method === "early") {
@@ -153,7 +163,7 @@
     if (state.method !== "absentee") {
       steps.push({ h: "Bring a photo ID", b: "<p>Any one of these:</p><ul>" + G.photoId.map(function (i) { return "<li>" + esc(i) + "</li>"; }).join("") + '</ul><p class="fine">' + esc(G.noIdNote) + "</p>" });
     }
-    steps.push({ h: "Look at your ballot before you go", b: "<p>" + link(L.sampleBallot, "See my sample ballot") + ' or <a href="#ballot">look through the races below</a>, so nothing surprises you.</p>' });
+    steps.push({ h: "Look at your ballot before you go", b: '<p><a href="#my-ballot">Make my sample ballot</a> to see just your races and mark your picks. You can also check your ' + link(L.sampleBallot, "official sample ballot") + ".</p>" });
 
     card.innerHTML = '<header><span class="check">' + icon("check", 22) + "</span><div><h3>" + esc(title) + "</h3><p>" + esc(sub) + "</p></div></header>" +
       '<div class="plan-body">' + steps.map(function (s, i) {
@@ -194,7 +204,7 @@
     var ev = [], idTxt = "Bring a photo ID: " + G.photoId.join(", ") + ".";
     if (state.method === "early") {
       if (!state.evDay) { say("Pick a day first, then tap Add to my calendar."); var f = document.querySelector(".day:not(:disabled)"); if (f) f.focus(); return; }
-      var c = G.counties[state.county];
+      var c = G.counties[profile.county];
       ev.push(vevent("early-" + state.evDay, state.evDay, G.earlyVoting.calStart, G.earlyVoting.calEnd, "Vote early (open 8:30 a.m. to 6 p.m.)",
         "Go to any early voting site in your county.\n" + idTxt + "\nSample ballot: " + G.links.sampleBallot, c && c.sites ? c.sites[0].address : ""));
     } else if (state.method === "eday") {
@@ -215,7 +225,7 @@
     say("Done. Open the file to add it to your calendar.");
   }
   function planText() {
-    var m = state.method, c = G.counties[state.county], s;
+    var m = state.method, c = G.counties[profile.county], s;
     if (m === "early") s = "I'm voting early" + (state.evDay ? " on " + fmtLong(state.evDay) : "") + (c ? " in " + c.name + " County" : "") + ". Early voting is open through " + fmtLong(G.earlyVoting.end) + ", 8:30 a.m. to 6 p.m.";
     else if (m === "eday") s = "I'm voting on Election Day, " + fmtLong(G.election.date) + ". Polls are open " + G.election.hours;
     else s = "I'm voting by mail. Ballots have to arrive by " + G.absentee.returnTime + " on " + md(G.absentee.returnBy) + ".";
@@ -233,25 +243,167 @@
     { id: "statewide", label: "Statewide" }, { id: "federal", label: "Congress" }, { id: "stateHouse", label: "SC House" },
     { id: "county", label: "County" }, { id: "school", label: "School board" }, { id: "questions", label: "Yes/No votes" }
   ];
-  function inCounty(item) {
-    if (!item.counties || item.counties === "all") return true;
-    if (!state.county || state.county === "other") return true;
-    return item.counties.indexOf(state.county) !== -1;
+  /* does this race or question show up on this person's ballot? "yes", "maybe" (depends on where they live), or "no" */
+  function fit(it) {
+    var P = profile, maybe = false;
+    if (!P.county || P.county === "all") return "yes";
+    if (it.cong != null && P.cong != null) return it.cong === P.cong ? "yes" : "no";
+    if (it.hd != null && P.hd != null) return it.hd === P.hd ? "yes" : "no";
+    if (it.counties && it.counties.indexOf(P.county) === -1) return "no";
+    if (it.cong != null || it.hd != null) maybe = true;
+    if (it.sd != null) { if (!P.sd) maybe = true; else if (P.sd !== it.sd) return "no"; }
+    if (it.place != null) { if (P.place == null) maybe = true; else if (P.place !== it.place) return "no"; }
+    if (it.pickKey) { var pk = P.picks[it.pickKey]; if (!pk) maybe = true; else if (pk !== it.sub) return "no"; }
+    if (it.maybeNote) maybe = true;
+    return maybe ? "maybe" : "yes";
   }
   function itemsFor(tab) {
-    if (tab === "questions") return G.questions.filter(inCounty);
-    return G.races.filter(function (r) { return r.level === tab && inCounty(r); });
+    var list = tab === "questions" ? G.questions : G.races.filter(function (r) { return r.level === tab; });
+    return list.filter(function (x) { return fit(x) !== "no"; });
   }
   function renderTabs() {
     $("ballot-tabs").innerHTML = TABS.map(function (t) {
       var n = itemsFor(t.id).length;
       return '<button type="button" class="tab" role="tab" id="tab-' + t.id + '" aria-selected="' + (state.tab === t.id) + '" aria-controls="ballot-panel" tabindex="' + (state.tab === t.id ? 0 : -1) + '">' +
-        icon(t.id, 18) + '<span class="tl-label">' + esc(t.label) + "</span>" + (n ? '<span class="count">' + n + "</span>" : "") + "</button>";
+        icon(t.id, 18) + '<span class="tl-label">' + esc(t.label) + "</span>" + '<span class="count">' + n + "</span></button>";
     }).join("");
-    var hint = $("county-hint"), co = G.counties[state.county];
-    hint.innerHTML = co ? "Showing races for <b>" + esc(co.name + " County") + "</b>. " + '<a href="#plan">Change</a>' :
-      "Showing " + esc(countyList()) + ' counties. <a href="#plan">Pick your county</a> to narrow it down.';
   }
+  function maybeTag(x) {
+    return profile.county && profile.county !== "all" && fit(x) === "maybe" ? '<p class="maybe-tag">On some ballots, depending on where you live</p>' : "";
+  }
+
+  /* ---------- where you vote: county switch, address finder, districts by hand ---------- */
+  var SEG = [{ v: "anderson", l: "Anderson" }, { v: "greenville", l: "Greenville" }, { v: "spartanburg", l: "Spartanburg" }, { v: "all", l: "All" }];
+  function setCounty(v, fromPlan) {
+    if (profile.county !== v) { profile = { county: v, picks: {} }; saveProfile(); }
+    if (!fromPlan) {
+      Array.prototype.forEach.call(document.querySelectorAll('input[name="county"]'), function (i) { i.checked = i.value === v; });
+      renderPlan(false);
+    }
+    renderWhere(); renderBallot(); renderMyBallot();
+  }
+  function districtChips() {
+    var P = profile, out = [];
+    if (P.county && G.counties[P.county]) out.push(G.counties[P.county].name + " County");
+    else if (P.county === "other") out.push(P.countyName ? P.countyName : "Another SC county");
+    if (P.cong) out.push("U.S. House District " + P.cong);
+    if (P.hd) out.push("SC House District " + P.hd);
+    if (P.sd && G.sdLabels[P.sd]) out.push(G.sdLabels[P.sd]);
+    if (P.place && P.place !== "__other__") out.push("City of " + P.place);
+    Object.keys(P.picks).forEach(function (k) { var v = P.picks[k]; if (v && v !== "__none__" && G.pickLabels[k]) out.push(G.pickLabels[k].replace(/ district$| board area$/, "") + ", " + v); });
+    return out;
+  }
+  function selectHTML(id, label, opts, cur) {
+    return '<label class="pick"><span>' + esc(label) + '</span><select data-k="' + esc(id) + '"><option value="">Not sure</option>' +
+      opts.map(function (o) { return '<option value="' + esc(o.v) + '"' + (String(cur == null ? "" : cur) === String(o.v) ? " selected" : "") + ">" + esc(o.l) + "</option>"; }).join("") + "</select></label>";
+  }
+  function handPickers() {
+    var P = profile, co = P.county, h = "";
+    if (!co || co === "all" || co === "other") return "";
+    var cong = G.races.filter(function (r) { return r.cong && r.counties.indexOf(co) !== -1; }).map(function (r) { return { v: r.cong, l: "District " + r.cong }; });
+    if (!P.located) {
+    h += selectHTML("cong", "U.S. House", cong, P.cong);
+    var hd = G.races.filter(function (r) { return r.hd && r.counties.indexOf(co) !== -1; }).sort(function (a, b) { return a.hd - b.hd; }).map(function (r) { return { v: r.hd, l: "District " + r.hd }; });
+    h += selectHTML("hd", "SC House", hd, P.hd);
+    var sds = (G.sdByCounty[co] || []).map(function (k) { return { v: k, l: G.sdLabels[k] }; });
+    if (sds.length) h += selectHTML("sd", "School district", sds.concat([{ v: "__other__", l: "A different school district" }]), P.sd);
+    var pl = G.placesByCounty[co];
+    if (pl) h += selectHTML("place", "City or town", pl.map(function (p) { return { v: p, l: p }; }).concat([{ v: "__other__", l: "A different city or town" }, { v: "__none__", l: "Not inside a city or town" }]), P.place === "" ? "__none__" : P.place);
+    }
+    var groups = {};
+    G.races.forEach(function (r) {
+      if (!r.pickKey || r.counties.indexOf(co) === -1) return;
+      if (r.sd && P.sd && P.sd !== r.sd) return;
+      (groups[r.pickKey] = groups[r.pickKey] || []).push(r.sub);
+    });
+    Object.keys(groups).forEach(function (k) {
+      var subs = groups[k].sort(function (a, b) { return parseInt(a.replace(/\D/g, ""), 10) - parseInt(b.replace(/\D/g, ""), 10); });
+      h += selectHTML("pick:" + k, G.pickLabels[k] || k, subs.map(function (x) { return { v: x, l: x }; }).concat([{ v: "__none__", l: "Mine isn't listed (not on my ballot this year)" }]), P.picks[k]);
+    });
+    return h;
+  }
+  function renderWhere(msg) {
+    var P = profile, chips = districtChips(), co = P.county;
+    var seg = '<div class="seg" role="radiogroup" aria-label="Show races for">' + SEG.map(function (o) {
+      var on = (co || "all") === o.v || (o.v === "all" && co === "other");
+      return '<button type="button" role="radio" aria-checked="' + on + '" data-county="' + o.v + '">' + esc(o.l) + "</button>";
+    }).join("") + "</div>";
+    var status = co && co !== "all"
+      ? '<p class="where-now">Showing races for: <b>' + esc(chips[0] || "") + "</b>" + (chips.length > 1 ? '</p><ul class="dchips">' + chips.slice(1).map(function (c) { return "<li>" + esc(c) + "</li>"; }).join("") + "</ul>" : "</p>")
+      : '<p class="where-now">Showing races in <b>all three counties</b>. Pick your county, or find your districts below, to see only your races.</p>';
+    if (co === "other") status += '<p class="fine">This guide covers ' + esc(countyList()) + " counties, so it shows only the statewide races" + (P.cong ? " and your U.S. House race" : "") + (P.hd ? " and your SC House race" : "") + ". " + link(G.links.sampleBallot, "See your full official sample ballot") + ".</p>";
+    var picks = handPickers();
+    var needs = co && co !== "all" && co !== "other" && /value="" selected|<option value="">Not sure<\/option><option/.test(picks) && P.located;
+    $("where").innerHTML =
+      '<h3 class="where-h">Whose ballot are you looking at?</h3>' + seg + status +
+      '<form class="finder" id="finder" autocomplete="on"><label for="addr">Find my exact districts by address</label>' +
+      '<div class="finder-row"><input id="addr" name="street-address" autocomplete="street-address" type="text" inputmode="text" placeholder="123 Main St, Greer, SC 29651" required>' +
+      '<button class="btn" type="submit">' + icon("search", 18) + "Find</button></div>" +
+      '<p class="finder-msg" id="finder-msg" role="status">' + (msg || "") + "</p>" +
+      '<p class="fine">Your address goes to the U.S. Census Bureau\'s free address lookup to match your districts. This guide doesn\'t save or see it.</p></form>' +
+      (picks ? '<details class="byhand"' + (needs ? " open" : "") + "><summary>" + (P.located ? "A few districts the address lookup can't tell" : "Or set your districts by hand") + "</summary>" +
+        '<p class="fine">Not sure? ' + link(G.links.myVoterInfo, "Look up your districts on scVOTES") + " (it lists every district you're in).</p>" + '<div class="picks">' + picks + "</div></details>" : "") +
+      '<a class="btn mb-open" href="#my-ballot">' + icon("ballot", 18) + "See my sample ballot</a>";
+  }
+  function onWhereClick(e) {
+    var b = e.target.closest("[data-county]"); if (!b) return;
+    setCounty(b.getAttribute("data-county"));
+  }
+  function onWhereChange(e) {
+    var sel = e.target.closest("select[data-k]"); if (!sel) return;
+    var k = sel.getAttribute("data-k"), v = sel.value;
+    if (k.indexOf("pick:") === 0) { var pk = k.slice(5); if (v) profile.picks[pk] = v; else delete profile.picks[pk]; }
+    else if (k === "cong" || k === "hd") profile[k] = v ? parseInt(v, 10) : null;
+    else if (k === "place") profile.place = v === "__none__" ? "" : (v || null);
+    else { profile[k] = v || null; if (k === "sd") Object.keys(profile.picks).forEach(function (p) { if (p.indexOf("area-") === 0) delete profile.picks[p]; }); }
+    saveProfile(); renderWhere(); var d = document.querySelector(".byhand"); if (d) d.open = true; renderBallot(); renderMyBallot();
+  }
+
+  /* address lookup through the Census Bureau geocoder (JSONP is the format it offers to web pages) */
+  function geocode(addr) {
+    return new Promise(function (resolve, reject) {
+      var cb = "uvgGeo" + Date.now(), s = document.createElement("script"), done = false;
+      var t = setTimeout(function () { finish(); reject(new Error("timeout")); }, 20000);
+      function finish() { done = true; clearTimeout(t); try { delete window[cb]; } catch (e) { window[cb] = undefined; } if (s.parentNode) s.parentNode.removeChild(s); }
+      window[cb] = function (j) { if (done) return; finish(); resolve(j); };
+      s.onerror = function () { if (done) return; finish(); reject(new Error("network")); };
+      s.src = "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=" + encodeURIComponent(addr) +
+        "&benchmark=Public_AR_Current&vintage=Current_Current&layers=all&format=jsonp&callback=" + cb;
+      document.head.appendChild(s);
+    });
+  }
+  function first(g, re) { for (var k in g) { if (re.test(k) && g[k] && g[k][0]) return g[k][0]; } return null; }
+  function num(x) { var m = x && String(x.NAME || x.BASENAME || "").match(/(\d+)/); return m ? parseInt(m[1], 10) : null; }
+  function onFind(e) {
+    e.preventDefault();
+    var addr = $("addr").value.trim(), msg = $("finder-msg");
+    if (addr.length < 6) { msg.textContent = "Type your street address, city, and ZIP code."; return; }
+    msg.textContent = "Looking it up…";
+    geocode(addr).then(function (j) {
+      var m = j && j.result && j.result.addressMatches && j.result.addressMatches[0];
+      if (!m) { msg.textContent = "We couldn't find that address. Add your city and ZIP code, or set your districts by hand below."; return; }
+      var g = m.geographies || {}, st = first(g, /^States$/);
+      if ((st && st.STUSAB && st.STUSAB !== "SC") || !/, SC,/.test(m.matchedAddress || "")) { msg.textContent = "That address isn't in South Carolina."; return; }
+      var co = first(g, /^Counties$/), coName = co ? co.NAME.replace(/ County$/, "") : "", key = coName.toLowerCase();
+      var usd = first(g, /Unified School Districts/), usdN = usd ? usd.NAME : "", sd = "__other__", mm;
+      if ((mm = usdN.match(/Anderson School District (\d)/))) sd = "anderson-" + mm[1];
+      else if (/Greenville County School District/.test(usdN)) sd = "greenville";
+      else if ((mm = usdN.match(/Spartanburg School District (\d)/))) sd = "spartanburg-" + mm[1];
+      var pl = first(g, /Incorporated Places/), place = pl ? pl.NAME.replace(/ (city|town)$/, "") : "";
+      var known = G.placesByCounty[key] || [];
+      profile = {
+        county: G.counties[key] ? key : "other", countyName: coName ? coName + " County" : null,
+        cong: num(first(g, /Congressional Districts/)), hd: num(first(g, /Legislative Districts - Lower/)),
+        sd: sd, place: place ? (known.indexOf(place) !== -1 ? place : "__other__") : "", picks: {}, located: true
+      };
+      saveProfile();
+      Array.prototype.forEach.call(document.querySelectorAll('input[name="county"]'), function (i) { i.checked = i.value === profile.county; });
+      renderPlan(false); renderBallot(); renderMyBallot();
+      var pretty = m.matchedAddress.replace(/, SC, (\d{5})$/, "").toLowerCase().replace(/\b([a-z])/g, function (c) { return c.toUpperCase(); });
+      renderWhere("Found: " + pretty + ". Lookups can be off right at a district line, so double-check on scVOTES if something looks wrong.");
+    }).catch(function () { msg.textContent = "The address lookup isn't answering right now. Set your districts by hand below, or try again in a minute."; });
+  }
+
   function initials(n) {
     var w = n.replace(/["“”].*?["“”]/g, "").replace(/\b(Jr|Sr|II|III|IV)\.?$/i, "").trim().split(/\s+/).filter(function (x) { return x.length > 1 || /[A-Z]/.test(x); });
     return ((w[0] || "")[0] || "") + ((w.length > 1 ? w[w.length - 1][0] : "") || "");
@@ -276,14 +428,14 @@
         (c.url ? '<a class="site-link" href="' + esc(c.url) + '" target="_blank" rel="noopener">Campaign website</a>' : "") +
         "</div></li>";
     }).join("") + "</ul>" : '<p class="empty">We couldn\'t confirm the names yet. Check your sample ballot.</p>';
-    return '<article class="race"><h3>' + esc(r.title) + "</h3>" +
+    return '<article class="race"><h3>' + esc(r.title) + "</h3>" + maybeTag(r) +
       (r.about ? '<p class="about">' + esc(r.about) + "</p>" : "") +
       (r.where ? '<p class="where">' + esc(r.where) + "</p>" : "") + list +
       (r.note ? '<p class="note">' + esc(r.note) + "</p>" : "") +
       (r.coverage ? '<a class="coverage-link" href="' + esc(r.coverage) + '" target="_blank" rel="noopener">' + icon("news", 16) + "Compare news coverage on Ground News</a>" : "") + "</article>";
   }
   function questionHTML(q) {
-    return '<article class="qcard"><h3>' + esc(q.title) + "</h3>" +
+    return '<article class="qcard"><h3>' + esc(q.title) + "</h3>" + maybeTag(q) +
       (q.where ? '<p class="where">' + esc(q.where) + "</p>" : "") + "<p>" + esc(q.plain) + "</p>" +
       '<div class="yn"><div class="yes"><b><span class="mark" aria-hidden="true"></span>If you vote Yes</b>' + esc(q.yes) +
       '</div><div class="no"><b><span class="mark" aria-hidden="true"></span>If you vote No</b>' + esc(q.no) + "</div></div></article>";
@@ -296,17 +448,11 @@
       if (G.noStatewideQuestions) html += '<p class="fine">There are no statewide questions this year. These local ones only show up for people in the area listed.</p>';
       html += items.length ? items.map(questionHTML).join("") : '<p class="empty">No local questions found for your area.</p>';
     } else {
-      if (state.tab === "stateHouse") {
-        items.sort(function (x, y) { return x.num - y.num; });
-        var opts = items.map(function (r) { return '<option value="' + esc(r.id) + '"' + (state.house === r.id ? " selected" : "") + ">" + esc(r.title) + "</option>"; }).join("");
-        html += '<div class="filter"><label for="house-sel">My district</label><select id="house-sel"><option value="all">Show all</option>' + opts + "</select>" +
-          link(G.links.myVoterInfo, "Don't know your district? Look it up") + "</div>";
-        if (state.house !== "all") items = items.filter(function (r) { return r.id === state.house; });
-      }
+      if (state.tab === "stateHouse") items.sort(function (x, y) { return x.num - y.num; });
       html += items.length ? items.map(raceHTML).join("") : '<p class="empty">Nothing to show here for your area. Your sample ballot has the full list.</p>';
       if (state.tab === "county" || state.tab === "school") {
         Object.keys(G.counties).forEach(function (k) {
-          if (G.counties[k].localNote && (!state.county || state.county === "other" || state.county === k)) html += '<p class="fine">' + esc(G.counties[k].localNote) + "</p>";
+          if (G.counties[k].localNote && (!profile.county || profile.county === "all" || profile.county === k)) html += '<p class="fine">' + esc(G.counties[k].localNote) + "</p>";
         });
       }
     }
@@ -319,8 +465,68 @@
     }
     panel.innerHTML = html;
     if (fromTab) { panel.classList.remove("swap"); void panel.offsetWidth; panel.classList.add("swap"); }
-    var sel = $("house-sel");
-    if (sel) sel.addEventListener("change", function () { state.house = sel.value; renderBallot(true); });
+  }
+
+  /* ---------- my sample ballot ---------- */
+  var MB_SECTIONS = [
+    { lvl: "federal", t: "U.S. Senate and U.S. House" }, { lvl: "statewide", t: "Statewide offices" }, { lvl: "stateHouse", t: "SC House of Representatives" },
+    { lvl: "county", t: "County" }, { lvl: "school", t: "School board (no party labels)" }, { lvl: "questions", t: "Yes/No questions" }
+  ];
+  function saveMarks() { save("uvg-marks-v1", marks); }
+  function optHTML(raceId, val, label, sub, max) {
+    var on = (marks[raceId] || []).indexOf(val) !== -1;
+    return '<button type="button" class="mb-opt" aria-pressed="' + on + '" data-race="' + esc(raceId) + '" data-val="' + esc(val) + '" data-max="' + max + '">' +
+      '<span class="mb-oval" aria-hidden="true"></span><span class="mb-nm">' + esc(label) + (sub ? "<small>" + esc(sub) + "</small>" : "") + "</span></button>";
+  }
+  function mbRace(r, f) {
+    var max = r.maxPicks || 1;
+    var cands = (r.candidates || []).slice().sort(function (a, b) { return lastName(a.name) < lastName(b.name) ? -1 : 1; });
+    return '<div class="mb-race' + (f === "maybe" ? " mb-maybe" : "") + '"><div class="mb-title"><b>' + esc(r.title) + "</b><span>" + (max > 1 ? "Pick up to " + max : "Pick 1") + "</span></div>" +
+      (f === "maybe" ? '<p class="mb-why">Might be on your ballot. ' + esc(r.where || "") + "</p>" : "") +
+      cands.map(function (c) { return optHTML(r.id, c.name, c.name, [c.party, c.running ? "with " + c.running : ""].filter(Boolean).join(", "), max); }).join("") + "</div>";
+  }
+  function mbQuestion(q, f) {
+    return '<div class="mb-race' + (f === "maybe" ? " mb-maybe" : "") + '"><div class="mb-title"><b>' + esc(q.title) + "</b><span>Yes or No</span></div>" +
+      (f === "maybe" ? '<p class="mb-why">Might be on your ballot. ' + esc(q.where || "") + "</p>" : "") +
+      '<p class="mb-q">' + esc(q.plain) + "</p>" + optHTML(q.id, "Yes", "Yes", q.yes, 1) + optHTML(q.id, "No", "No", q.no, 1) + "</div>";
+  }
+  function renderMyBallot() {
+    var box = $("mb-body"); if (!box) return;
+    var P = profile;
+    if (!P.county || P.county === "all") {
+      box.innerHTML = '<div class="mb-empty"><p><b>First, tell us where you vote.</b> Pick your county or type your address, and we\'ll build a ballot with just your races.</p><a class="btn" href="#where">' + icon("search", 18) + "Find my districts</a></div>";
+      $("mb-chips").innerHTML = ""; $("mb-count").textContent = ""; return;
+    }
+    var yes = 0, maybe = 0, html = "";
+    MB_SECTIONS.forEach(function (sec) {
+      var list = sec.lvl === "questions" ? G.questions : G.races.filter(function (r) { return r.level === sec.lvl; });
+      var rows = list.map(function (x) { return { x: x, f: fit(x) }; }).filter(function (o) { return o.f !== "no"; });
+      if (sec.lvl === "stateHouse") rows.sort(function (a, b) { return a.x.num - b.x.num; });
+      rows.sort(function (a, b) { return (a.f === "maybe") - (b.f === "maybe"); });
+      if (!rows.length) return;
+      rows.forEach(function (o) { if (o.f === "yes") yes++; else maybe++; });
+      html += '<section class="mb-sec"><h3>' + esc(sec.t) + "</h3>" + rows.map(function (o) { return sec.lvl === "questions" ? mbQuestion(o.x, o.f) : mbRace(o.x, o.f); }).join("") + "</section>";
+    });
+    box.innerHTML = html;
+    $("mb-chips").innerHTML = districtChips().map(function (c) { return "<li>" + esc(c) + "</li>"; }).join("");
+    $("mb-count").innerHTML = esc(yes + (yes === 1 ? " item is" : " items are") + " on your ballot.") + (maybe ? " " + maybe + ' more might be, depending on where you live. <a href="#where">Set your districts</a> to narrow it down.' : "");
+  }
+  function onMarkClick(e) {
+    var b = e.target.closest(".mb-opt"); if (!b) return;
+    var id = b.getAttribute("data-race"), v = b.getAttribute("data-val"), max = +b.getAttribute("data-max") || 1;
+    var cur = (marks[id] || []).slice(), i = cur.indexOf(v);
+    if (i !== -1) cur.splice(i, 1); else if (max === 1) cur = [v]; else { if (cur.length >= max) cur.shift(); cur.push(v); }
+    if (cur.length) marks[id] = cur; else delete marks[id];
+    saveMarks();
+    Array.prototype.forEach.call(document.querySelectorAll('.mb-opt[data-race="' + id.replace(/"/g, '\\"') + '"]'), function (x) { x.setAttribute("aria-pressed", cur.indexOf(x.getAttribute("data-val")) !== -1); });
+  }
+  function route() {
+    var on = location.hash === "#my-ballot";
+    document.body.classList.toggle("mb-mode", on);
+    $("my-ballot").hidden = !on;
+    if (on) { renderMyBallot(); window.scrollTo(0, 0); var h = $("mb-h"); if (h) h.focus({ preventScroll: true }); }
+    else if (location.hash.length > 1) { var t = document.getElementById(location.hash.slice(1)); if (t) setTimeout(function () { t.scrollIntoView(); }, 0); }
+    window.dispatchEvent(new Event("scroll"));
   }
 
   /* photos: fade in when loaded, fall back to initials if a link breaks */
@@ -376,15 +582,18 @@
     var links = inner.querySelectorAll("a"), secs = items.map(function (it) { return $(it.id); }), header = $("top");
     inner.addEventListener("click", function (e) {
       var a = e.target.closest("a"); if (!a) return;
-      if (a.getAttribute("data-sec") === "top") { e.preventDefault(); window.scrollTo({ top: 0 }); history.replaceState(null, "", location.pathname + location.search); }
+      if (a.getAttribute("data-sec") === "top") { e.preventDefault(); history.replaceState(null, "", location.pathname + location.search); route(); window.scrollTo({ top: 0 }); }
     });
     var ticking = false;
     function update() {
       ticking = false;
-      dock.classList.toggle("show", window.scrollY > header.offsetHeight - 80);
+      dock.classList.toggle("show", document.body.classList.contains("mb-mode") || window.scrollY > header.offsetHeight - 80);
       var line = window.innerHeight * 0.35, cur = "top";
-      secs.forEach(function (el, i) { if (el && el.getBoundingClientRect().top <= line) cur = items[i].id; });
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) cur = "help";
+      if (document.body.classList.contains("mb-mode")) cur = "ballot";
+      else {
+        secs.forEach(function (el, i) { if (el && el.getBoundingClientRect().top <= line) cur = items[i].id; });
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) cur = "help";
+      }
       Array.prototype.forEach.call(links, function (a) {
         var on = a.getAttribute("data-sec") === cur;
         a.classList.toggle("on", on);
@@ -399,7 +608,18 @@
   /* ---------- start ---------- */
   renderStatus();
   renderTimeline();
-  ovals("county-choices", "county", countyOptions(), function (v) { state.county = v; state.house = "all"; renderPlan(!state.method ? false : true); renderBallot(); });
+  ovals("county-choices", "county", countyOptions(), function (v) { setCounty(v, true); renderPlan(!!state.method); });
+  if (profile.county) Array.prototype.forEach.call(document.querySelectorAll('input[name="county"]'), function (i) { i.checked = i.value === profile.county; });
+  var whereEl = $("where");
+  whereEl.addEventListener("click", onWhereClick);
+  whereEl.addEventListener("change", onWhereChange);
+  whereEl.addEventListener("submit", onFind);
+  $("my-ballot").addEventListener("click", function (e) {
+    onMarkClick(e);
+    if (e.target.closest("#mb-print")) window.print();
+    if (e.target.closest("#mb-clear")) { marks = {}; saveMarks(); renderMyBallot(); }
+  });
+  renderWhere();
   ovals("method-choices", "method", methodOptions(), function (v) { var first = !state.method; state.method = v; state.evDay = null; renderPlan(true); if (first && state.county) setTimeout(function () { $("plan-card").scrollIntoView({ block: "nearest" }); }, 60); });
   var tabsEl = $("ballot-tabs");
   function goTab(id, scroll) {
@@ -428,4 +648,6 @@
   renderNews();
   renderFAQ();
   setupNav();
+  window.addEventListener("hashchange", route);
+  route();
 })();

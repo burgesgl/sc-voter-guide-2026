@@ -26,7 +26,7 @@
     <p id="status" class="status" aria-live="polite"></p>
     <div class="quick">
       <a class="qbtn primary" href="#plan">Make my plan</a>
-      <a class="qbtn" href="#ballot">See who's running</a>
+      <a class="qbtn" href="#my-ballot">See my ballot</a>
     </div>
   </div>
 </header>
@@ -57,10 +57,25 @@
   <section id="ballot" class="wrap block" aria-labelledby="ballot-h">
     <h2 id="ballot-h">Who and what is on the ballot</h2>
     <p class="lede">Names are in ABC order by last name. This guide doesn't tell you who to vote for.</p>
-    <p class="county-hint" id="county-hint"></p>
+    <div class="where-card" id="where"></div>
     <div class="tabs" role="tablist" id="ballot-tabs"></div>
     <div id="ballot-panel" role="tabpanel" tabindex="-1"></div>
     <p class="fine sample">What's on your ballot depends on your address. <a id="sample-link" href="#" target="_blank" rel="noopener">See your exact sample ballot</a>.</p>
+  </section>
+
+  <section id="my-ballot" class="wrap block mb" aria-labelledby="mb-h" hidden>
+    <a class="mb-back" href="#ballot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></svg>Back to the guide</a>
+    <h2 id="mb-h" tabindex="-1">My sample ballot</h2>
+    <p class="lede">Just the races on your ballot, grouped by type. Tap a bubble to mark your pick. Your picks stay on this phone or computer only.</p>
+    <ul class="dchips" id="mb-chips"></ul>
+    <p class="mb-count" id="mb-count"></p>
+    <div class="actions mb-actions">
+      <a class="btn ghost" href="#where">Change my districts</a>
+      <button type="button" class="btn ghost" id="mb-print">Print or save as PDF</button>
+      <button type="button" class="btn ghost" id="mb-clear">Clear my picks</button>
+    </div>
+    <div id="mb-body"></div>
+    <p class="fine mb-foot">This is an unofficial guide. The order on your real ballot may be different. <a href="https://vrems.scvotes.sc.gov/Voter/Login?PageMode=Sampleballot" target="_blank" rel="noopener">See your official sample ballot on scVOTES</a>.</p>
   </section>
 
   <section id="control" class="wrap block" aria-labelledby="control-h">

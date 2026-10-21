@@ -446,7 +446,8 @@ window.GUIDE = {
      "img": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/EuniceLehmacher_headshot_1500pix_20260426_002641_2556.jpeg"
     }
    ],
-   "about": "Writes and votes on national laws, including the federal budget and taxes."
+   "about": "Writes and votes on national laws, including the federal budget and taxes.",
+   "cong": 3
   },
   {
    "id": "SC-4",
@@ -477,7 +478,8 @@ window.GUIDE = {
      "img": "https://timmons.house.gov/uploadedphotos/mediumresolution/640ad8ba-6194-4627-a128-806b1e648f8f.png"
     }
    ],
-   "about": "Writes and votes on national laws, including the federal budget and taxes."
+   "about": "Writes and votes on national laws, including the federal budget and taxes.",
+   "cong": 4
   },
   {
    "id": "SC-5",
@@ -501,7 +503,8 @@ window.GUIDE = {
     }
    ],
    "about": "Writes and votes on national laws, including the federal budget and taxes.",
-   "note": "Andy Kaplan (Forward Party) announced a run earlier this year, but recent listings show only these two candidates. Check your sample ballot."
+   "note": "Andy Kaplan (Forward Party) announced a run earlier this year, but recent listings show only these two candidates. Check your sample ballot.",
+   "cong": 5
   },
   {
    "id": "hd6",
@@ -526,7 +529,8 @@ window.GUIDE = {
      "img": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Jennifer_Bachner_20260425_105316.jpg"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 6
   },
   {
    "id": "hd7",
@@ -552,7 +556,8 @@ window.GUIDE = {
      "img": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Elizabeth_Cooley_20260504_113051.jpeg"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 7
   },
   {
    "id": "hd8",
@@ -577,7 +582,8 @@ window.GUIDE = {
      "party": "Democratic"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 8
   },
   {
    "id": "hd9",
@@ -603,7 +609,8 @@ window.GUIDE = {
      "img": "https://images.squarespace-cdn.com/content/v1/69ebabce9badfa0c78f7f6bc/3d6e6d16-fa30-49da-ae58-6ff0e888dcab/johnny3.jpg"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 9
   },
   {
    "id": "hd10",
@@ -630,7 +637,8 @@ window.GUIDE = {
      "img": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Thomas_Stewart_20260410_081126.jpg"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 10
   },
   {
    "id": "hd11",
@@ -663,7 +671,8 @@ window.GUIDE = {
      "img": "https://static.wixstatic.com/media/5e8b08_b756dd447a0e4c5e9cf42df8712f5522~mv2.png"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 11
   },
   {
    "id": "hd29",
@@ -689,7 +698,8 @@ window.GUIDE = {
      "img": "https://www.scstatehouse.gov/images/members/1379545289.jpg"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 29
   },
   {
    "id": "hd30",
@@ -715,7 +725,8 @@ window.GUIDE = {
      "img": "https://www.scstatehouse.gov/images/members/1067613508.jpg"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 30
   },
   {
    "id": "hd31",
@@ -742,7 +753,8 @@ window.GUIDE = {
      "img": "https://static.wixstatic.com/media/5e8b08_80bfd6808da341bbb7037410a90c16bf~mv2.jpg"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 31
   },
   {
    "id": "hd32",
@@ -766,7 +778,8 @@ window.GUIDE = {
      "img": "https://www.scstatehouse.gov/images/members/1351704384.jpg"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 32
   },
   {
    "id": "hd33",
@@ -793,7 +806,8 @@ window.GUIDE = {
      "img": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/20240204-152230-BH5R4573-Web_20260629_144053_43066_1.jpg"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 33
   },
   {
    "id": "hd34",
@@ -819,7 +833,8 @@ window.GUIDE = {
      "img": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Saville_Williams_20260503_040044.jpg"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 34
   },
   {
    "id": "hd35",
@@ -845,7 +860,8 @@ window.GUIDE = {
      "img": "https://assets.civicengine.com/uploads/candidate/headshot/943525/943525.jpg"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 35
   },
   {
    "id": "hd36",
@@ -871,7 +887,8 @@ window.GUIDE = {
      "img": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/3BA0FB43-1940-4C0F-B72D-2A772967616F_20260619_000008_39901_1.jpeg"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 36
   },
   {
    "id": "hd37",
@@ -897,7 +914,8 @@ window.GUIDE = {
      "img": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Sauer-Hart2026.jpg"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 37
   },
   {
    "id": "hd38",
@@ -925,7 +943,8 @@ window.GUIDE = {
      "img": "https://www.scstatehouse.gov/images/members/1130965774.jpg"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 38
   },
   {
    "id": "anderson-county-council-district-1",
@@ -945,7 +964,9 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services."
+   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services.",
+   "pickKey": "council-anderson",
+   "sub": "District 1"
   },
   {
    "id": "anderson-county-council-district-2",
@@ -969,7 +990,9 @@ window.GUIDE = {
      "img": "https://assets.civicengine.com/uploads/candidate/headshot/817566/817566.jpg"
     }
    ],
-   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services."
+   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services.",
+   "pickKey": "council-anderson",
+   "sub": "District 2"
   },
   {
    "id": "anderson-county-council-district-3",
@@ -989,7 +1012,9 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services."
+   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services.",
+   "pickKey": "council-anderson",
+   "sub": "District 3"
   },
   {
    "id": "anderson-county-council-district-4",
@@ -1007,7 +1032,9 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services."
+   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services.",
+   "pickKey": "council-anderson",
+   "sub": "District 4"
   },
   {
    "id": "anderson-county-council-district-5",
@@ -1024,7 +1051,9 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services."
+   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services.",
+   "pickKey": "council-anderson",
+   "sub": "District 5"
   },
   {
    "id": "anderson-county-council-district-6",
@@ -1044,7 +1073,9 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services."
+   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services.",
+   "pickKey": "council-anderson",
+   "sub": "District 6"
   },
   {
    "id": "anderson-county-council-district-7",
@@ -1063,7 +1094,9 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services."
+   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services.",
+   "pickKey": "council-anderson",
+   "sub": "District 7"
   },
   {
    "id": "anderson-probate-judge",
@@ -1182,7 +1215,9 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services."
+   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services.",
+   "pickKey": "council-spartanburg",
+   "sub": "District 2"
   },
   {
    "id": "spartanburg-county-council-district-5",
@@ -1204,7 +1239,9 @@ window.GUIDE = {
      "img": "https://assets.civicengine.com/uploads/candidate/headshot/943251/943251.jpg"
     }
    ],
-   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services."
+   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services.",
+   "pickKey": "council-spartanburg",
+   "sub": "District 5"
   },
   {
    "id": "spartanburg-county-council-district-6",
@@ -1232,7 +1269,9 @@ window.GUIDE = {
      "img": "https://assets.civicengine.com/uploads/candidate/headshot/971849/971849.jpg"
     }
    ],
-   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services."
+   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services.",
+   "pickKey": "council-spartanburg",
+   "sub": "District 6"
   },
   {
    "id": "sb-anderson-school-district-1-area-1",
@@ -1248,7 +1287,10 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "anderson-1",
+   "pickKey": "area-anderson-1",
+   "sub": "Area 1"
   },
   {
    "id": "sb-anderson-school-district-1-area-4",
@@ -1265,7 +1307,10 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "anderson-1",
+   "pickKey": "area-anderson-1",
+   "sub": "Area 4"
   },
   {
    "id": "sb-anderson-school-district-1-area-5",
@@ -1282,7 +1327,10 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "anderson-1",
+   "pickKey": "area-anderson-1",
+   "sub": "Area 5"
   },
   {
    "id": "sb-anderson-school-district-1-area-7",
@@ -1299,7 +1347,10 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "anderson-1",
+   "pickKey": "area-anderson-1",
+   "sub": "Area 7"
   },
   {
    "id": "sb-anderson-school-district-2-area-1",
@@ -1318,7 +1369,10 @@ window.GUIDE = {
      "img": "https://assets.civicengine.com/uploads/candidate/headshot/971026/971026.jpg"
     }
    ],
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "anderson-2",
+   "pickKey": "area-anderson-2",
+   "sub": "Area 1"
   },
   {
    "id": "sb-anderson-school-district-2-area-3",
@@ -1341,7 +1395,10 @@ window.GUIDE = {
      "img": "https://assets.civicengine.com/uploads/candidate/headshot/971030/971030.jpg"
     }
    ],
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "anderson-2",
+   "pickKey": "area-anderson-2",
+   "sub": "Area 3"
   },
   {
    "id": "sb-anderson-school-district-2-area-4",
@@ -1358,7 +1415,10 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "anderson-2",
+   "pickKey": "area-anderson-2",
+   "sub": "Area 4"
   },
   {
    "id": "sb-anderson-school-district-2-at-large",
@@ -1378,7 +1438,8 @@ window.GUIDE = {
      "name": "Eddie Martin"
     }
    ],
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "anderson-2"
   },
   {
    "id": "sb-anderson-school-district-3-area-1",
@@ -1395,7 +1456,10 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "anderson-3",
+   "pickKey": "area-anderson-3",
+   "sub": "Area 1"
   },
   {
    "id": "sb-anderson-school-district-3-area-4",
@@ -1412,7 +1476,10 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "anderson-3",
+   "pickKey": "area-anderson-3",
+   "sub": "Area 4"
   },
   {
    "id": "sb-anderson-school-district-3-at-large",
@@ -1429,7 +1496,8 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "anderson-3"
   },
   {
    "id": "sb-anderson-school-district-4-area-2",
@@ -1446,7 +1514,10 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "anderson-4",
+   "pickKey": "area-anderson-4",
+   "sub": "Area 2"
   },
   {
    "id": "sb-anderson-school-district-4-area-4",
@@ -1469,7 +1540,10 @@ window.GUIDE = {
      "name": "Dustin Williams"
     }
    ],
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "anderson-4",
+   "pickKey": "area-anderson-4",
+   "sub": "Area 4"
   },
   {
    "id": "sb-anderson-school-district-4-area-5",
@@ -1486,7 +1560,10 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "anderson-4",
+   "pickKey": "area-anderson-4",
+   "sub": "Area 5"
   },
   {
    "id": "sb-anderson-school-district-5-area-2",
@@ -1503,7 +1580,10 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "anderson-5",
+   "pickKey": "area-anderson-5",
+   "sub": "Area 2"
   },
   {
    "id": "sb-anderson-school-district-5-area-5",
@@ -1520,7 +1600,10 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "anderson-5",
+   "pickKey": "area-anderson-5",
+   "sub": "Area 5"
   },
   {
    "id": "sb-anderson-school-district-5-area-6",
@@ -1538,7 +1621,10 @@ window.GUIDE = {
      "name": "Dickie Smith"
     }
    ],
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "anderson-5",
+   "pickKey": "area-anderson-5",
+   "sub": "Area 6"
   },
   {
    "id": "sb-anderson-school-district-5-at-large",
@@ -1557,7 +1643,8 @@ window.GUIDE = {
      "name": "Tim Self"
     }
    ],
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "anderson-5"
   },
   {
    "id": "sb-anderson-county-board-of-education-district-1",
@@ -1574,7 +1661,9 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "A countywide board that handles some shared school business for Anderson County's five school districts."
+   "about": "A countywide board that handles some shared school business for Anderson County's five school districts.",
+   "pickKey": "boe-anderson",
+   "sub": "District 1"
   },
   {
    "id": "sb-anderson-county-board-of-education-district-3",
@@ -1593,7 +1682,9 @@ window.GUIDE = {
      "name": "Rae Lynn Kit"
     }
    ],
-   "about": "A countywide board that handles some shared school business for Anderson County's five school districts."
+   "about": "A countywide board that handles some shared school business for Anderson County's five school districts.",
+   "pickKey": "boe-anderson",
+   "sub": "District 3"
   },
   {
    "id": "sb-anderson-county-board-of-education-district-4",
@@ -1610,7 +1701,9 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "A countywide board that handles some shared school business for Anderson County's five school districts."
+   "about": "A countywide board that handles some shared school business for Anderson County's five school districts.",
+   "pickKey": "boe-anderson",
+   "sub": "District 4"
   },
   {
    "id": "sb-anderson-county-board-of-education-district-5",
@@ -1627,7 +1720,9 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "A countywide board that handles some shared school business for Anderson County's five school districts."
+   "about": "A countywide board that handles some shared school business for Anderson County's five school districts.",
+   "pickKey": "boe-anderson",
+   "sub": "District 5"
   },
   {
    "id": "sb-anderson-county-board-of-education-district-6",
@@ -1644,7 +1739,9 @@ window.GUIDE = {
     }
    ],
    "note": "Only one name on the ballot.",
-   "about": "A countywide board that handles some shared school business for Anderson County's five school districts."
+   "about": "A countywide board that handles some shared school business for Anderson County's five school districts.",
+   "pickKey": "boe-anderson",
+   "sub": "District 6"
   },
   {
    "id": "sb-gvl18",
@@ -1665,7 +1762,10 @@ window.GUIDE = {
      "img": "https://assets.civicengine.com/uploads/candidate/headshot/719360/719360.jpg"
     }
    ],
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "greenville",
+   "pickKey": "area-greenville",
+   "sub": "District 18"
   },
   {
    "id": "hd5",
@@ -1689,7 +1789,8 @@ window.GUIDE = {
      "party": "Democratic"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 5
   },
   {
    "id": "hd16",
@@ -1716,7 +1817,8 @@ window.GUIDE = {
      "imgPos": "100% 25%"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 16
   },
   {
    "id": "hd17",
@@ -1742,7 +1844,8 @@ window.GUIDE = {
      "img": "https://rich4sc.org/wp-content/uploads/2014/09/83A1030.jpg"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 17
   },
   {
    "id": "hd18",
@@ -1770,7 +1873,8 @@ window.GUIDE = {
      "imgPos": "50% 35%"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 18
   },
   {
    "id": "hd19",
@@ -1796,7 +1900,8 @@ window.GUIDE = {
      "img": "https://static.wixstatic.com/media/37a052_80220fd6d41f4ef6af603e92a4322c06~mv2.png/v1/fill/w_1040,h_1370,fp_0.50_0.50,q_90,usm_0.66_1.00_0.01,enc_auto/9a1add93-cdc0-43af-bd60-7bb1ed5413dc.png"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 19
   },
   {
    "id": "hd20",
@@ -1820,7 +1925,8 @@ window.GUIDE = {
      "party": "Democratic"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 20
   },
   {
    "id": "hd21",
@@ -1847,7 +1953,8 @@ window.GUIDE = {
      "imgPos": "52% 25%"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 21
   },
   {
    "id": "hd22",
@@ -1874,7 +1981,8 @@ window.GUIDE = {
      "imgPos": "50% 12%"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 22
   },
   {
    "id": "hd23",
@@ -1896,7 +2004,8 @@ window.GUIDE = {
     }
    ],
    "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
-   "note": "Only one name on the ballot."
+   "note": "Only one name on the ballot.",
+   "hd": 23
   },
   {
    "id": "hd24",
@@ -1923,7 +2032,8 @@ window.GUIDE = {
      "imgPos": "50% 25%"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 24
   },
   {
    "id": "hd25",
@@ -1945,7 +2055,8 @@ window.GUIDE = {
     }
    ],
    "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
-   "note": "Only one name on the ballot."
+   "note": "Only one name on the ballot.",
+   "hd": 25
   },
   {
    "id": "hd27",
@@ -1972,7 +2083,8 @@ window.GUIDE = {
      "imgPos": "70% 30%"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 27
   },
   {
    "id": "hd28",
@@ -1999,7 +2111,8 @@ window.GUIDE = {
      "imgPos": "55% 20%"
     }
    ],
-   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "hd": 28
   },
   {
    "id": "greenville-solicitor-13th-judicial-circuit",
@@ -2103,7 +2216,9 @@ window.GUIDE = {
     }
    ],
    "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services.",
-   "note": "Only one name on the ballot."
+   "note": "Only one name on the ballot.",
+   "pickKey": "council-greenville",
+   "sub": "District 17"
   },
   {
    "id": "greenville-county-council-district-19",
@@ -2127,7 +2242,9 @@ window.GUIDE = {
      "imgPos": "45% 40%"
     }
    ],
-   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services."
+   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services.",
+   "pickKey": "council-greenville",
+   "sub": "District 19"
   },
   {
    "id": "greenville-county-council-district-23",
@@ -2147,7 +2264,9 @@ window.GUIDE = {
     }
    ],
    "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services.",
-   "note": "Only one name on the ballot. The current council member lost in the June primary, so this seat will have someone new."
+   "note": "Only one name on the ballot. The current council member lost in the June primary, so this seat will have someone new.",
+   "pickKey": "council-greenville",
+   "sub": "District 23"
   },
   {
    "id": "greenville-county-council-district-26",
@@ -2166,7 +2285,9 @@ window.GUIDE = {
     }
    ],
    "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services.",
-   "note": "Only one name on the ballot. The current council member lost in the June primary, so this seat will have someone new."
+   "note": "Only one name on the ballot. The current council member lost in the June primary, so this seat will have someone new.",
+   "pickKey": "council-greenville",
+   "sub": "District 26"
   },
   {
    "id": "greenville-county-council-district-28",
@@ -2192,7 +2313,9 @@ window.GUIDE = {
      "imgPos": "40% 30%"
     }
    ],
-   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services."
+   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services.",
+   "pickKey": "council-greenville",
+   "sub": "District 28"
   },
   {
    "id": "sb-gvl20",
@@ -2217,7 +2340,10 @@ window.GUIDE = {
      "imgPos": "50% 30%"
     }
    ],
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "greenville",
+   "pickKey": "area-greenville",
+   "sub": "District 20"
   },
   {
    "id": "sb-gvl22",
@@ -2239,7 +2365,10 @@ window.GUIDE = {
      "imgPos": "50% 35%"
     }
    ],
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "greenville",
+   "pickKey": "area-greenville",
+   "sub": "District 22"
   },
   {
    "id": "sb-gvl24",
@@ -2257,7 +2386,10 @@ window.GUIDE = {
     }
    ],
    "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
-   "note": "Only one name on the ballot."
+   "note": "Only one name on the ballot.",
+   "sd": "greenville",
+   "pickKey": "area-greenville",
+   "sub": "District 24"
   },
   {
    "id": "sb-gvl26",
@@ -2279,7 +2411,10 @@ window.GUIDE = {
      "imgPos": "50% 25%"
     }
    ],
-   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "sd": "greenville",
+   "pickKey": "area-greenville",
+   "sub": "District 26"
   },
   {
    "id": "sb-gvl28",
@@ -2297,7 +2432,10 @@ window.GUIDE = {
     }
    ],
    "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
-   "note": "Only one name on the ballot."
+   "note": "Only one name on the ballot.",
+   "sd": "greenville",
+   "pickKey": "area-greenville",
+   "sub": "District 28"
   },
   {
    "id": "greenville-soil-water",
@@ -2316,7 +2454,8 @@ window.GUIDE = {
      "name": "Mike Stewart"
     }
    ],
-   "note": "Two seats, two names on the ballot."
+   "note": "Two seats, two names on the ballot.",
+   "maxPicks": 2
   }
  ],
  "questions": [
@@ -2329,7 +2468,8 @@ window.GUIDE = {
    "where": "Only for people who live in Spartanburg County School District 2.",
    "plain": "Should the district borrow up to $156.6 million to build a new K-8 school in Boiling Springs and add classrooms at Cooley Springs-Fingerville and Mayo elementary schools? The district says this won't raise taxes.",
    "yes": "The district can borrow the money for these projects.",
-   "no": "The district can't borrow money for these projects through this vote."
+   "no": "The district can't borrow money for these projects through this vote.",
+   "sd": "spartanburg-2"
   },
   {
    "id": "q-sd2-2",
@@ -2340,7 +2480,8 @@ window.GUIDE = {
    "where": "Only for people in Spartanburg School District 2. It only counts if Question 1 also passes.",
    "plain": "Should the district borrow up to $30 million more for stadium upgrades at both high schools, sports upgrades at the middle schools, and new playgrounds at the elementary schools? The district says this one would raise property taxes about $5 a month on a $300,000 home.",
    "yes": "If Question 1 also passes, the district can borrow this extra money.",
-   "no": "No extra money for these projects. If Question 1 fails, this one doesn't count either way."
+   "no": "No extra money for these projects. If Question 1 fails, this one doesn't count either way.",
+   "sd": "spartanburg-2"
   },
   {
    "id": "q-ssfd",
@@ -2351,7 +2492,8 @@ window.GUIDE = {
    "where": "Only for people in the South Spartanburg Fire District (the old Roebuck and Croft fire districts).",
    "plain": "Should the fire district be allowed to charge more property tax for staff and equipment? This raises the limit from 36 to 45 mills. (Mills are how property tax rates are measured.) The district says it wouldn't jump to the new limit right away.",
    "yes": "The limit goes up to 45 mills. The district could raise its tax over time, up to that limit.",
-   "no": "The limit stays at 36 mills."
+   "no": "The limit stays at 36 mills.",
+   "maybeNote": true
   },
   {
    "id": "q-broadview",
@@ -2362,7 +2504,8 @@ window.GUIDE = {
    "where": "Only for people in Anderson County's Broadview precinct, near Broadway Lake.",
    "plain": "Right now this area has no county zoning rules. Should it get them? Zoning decides what can be built where, like homes, stores, or factories.",
    "yes": "The area gets county zoning rules. New building plans that aren't approved yet would have to follow them.",
-   "no": "The area stays without zoning rules."
+   "no": "The area stays without zoning rules.",
+   "maybeNote": true
   },
   {
    "id": "q-greenpond",
@@ -2373,7 +2516,8 @@ window.GUIDE = {
    "where": "Only for people in Anderson County's Green Pond Station A precinct.",
    "plain": "The state lists a vote for this precinct on Nov. 3, but the question's wording wasn't posted anywhere we could find.",
    "yes": "See your sample ballot for the exact question.",
-   "no": "See your sample ballot for the exact question."
+   "no": "See your sample ballot for the exact question.",
+   "maybeNote": true
   },
   {
    "id": "q-gvl-1",
@@ -2406,7 +2550,8 @@ window.GUIDE = {
    "no": "No new city sales tax.",
    "counties": [
     "greenville"
-   ]
+   ],
+   "place": "Greenville"
   },
   {
    "id": "q-city-mauldin",
@@ -2417,7 +2562,8 @@ window.GUIDE = {
    "no": "No new city sales tax.",
    "counties": [
     "greenville"
-   ]
+   ],
+   "place": "Mauldin"
   },
   {
    "id": "q-city-simpsonville",
@@ -2428,7 +2574,8 @@ window.GUIDE = {
    "no": "No new city sales tax.",
    "counties": [
     "greenville"
-   ]
+   ],
+   "place": "Simpsonville"
   },
   {
    "id": "q-city-tr",
@@ -2439,7 +2586,8 @@ window.GUIDE = {
    "no": "No new city sales tax.",
    "counties": [
     "greenville"
-   ]
+   ],
+   "place": "Travelers Rest"
   }
  ],
  "noStatewideQuestions": true,
@@ -2629,5 +2777,63 @@ window.GUIDE = {
    "It's a quick way to see how the same news gets told differently, and to spot stories that one side is mostly ignoring."
   ],
   "note": "This guide isn't connected to Ground News."
+ },
+ "pickLabels": {
+  "council-anderson": "Anderson County Council district",
+  "council-greenville": "Greenville County Council district",
+  "council-spartanburg": "Spartanburg County Council district",
+  "boe-anderson": "Anderson County Board of Education district",
+  "area-greenville": "Greenville County Schools board district",
+  "area-anderson-1": "Anderson School District 1 board area",
+  "area-anderson-2": "Anderson School District 2 board area",
+  "area-anderson-3": "Anderson School District 3 board area",
+  "area-anderson-4": "Anderson School District 4 board area",
+  "area-anderson-5": "Anderson School District 5 board area"
+ },
+ "sdLabels": {
+  "greenville": "Greenville County Schools",
+  "anderson-1": "Anderson School District 1",
+  "anderson-2": "Anderson School District 2",
+  "anderson-3": "Anderson School District 3",
+  "anderson-4": "Anderson School District 4",
+  "anderson-5": "Anderson School District 5",
+  "spartanburg-1": "Spartanburg School District 1",
+  "spartanburg-2": "Spartanburg School District 2",
+  "spartanburg-3": "Spartanburg School District 3",
+  "spartanburg-4": "Spartanburg School District 4",
+  "spartanburg-5": "Spartanburg School District 5",
+  "spartanburg-6": "Spartanburg School District 6",
+  "spartanburg-7": "Spartanburg School District 7"
+ },
+ "sdByCounty": {
+  "anderson": [
+   "anderson-1",
+   "anderson-2",
+   "anderson-3",
+   "anderson-4",
+   "anderson-5"
+  ],
+  "greenville": [
+   "greenville",
+   "anderson-2"
+  ],
+  "spartanburg": [
+   "spartanburg-1",
+   "spartanburg-2",
+   "spartanburg-3",
+   "spartanburg-4",
+   "spartanburg-5",
+   "spartanburg-6",
+   "spartanburg-7",
+   "greenville"
+  ]
+ },
+ "placesByCounty": {
+  "greenville": [
+   "Greenville",
+   "Mauldin",
+   "Simpsonville",
+   "Travelers Rest"
+  ]
  }
 };
