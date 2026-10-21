@@ -1713,7 +1713,7 @@ window.GUIDE = {
      "party": "Democratic",
      "url": "https://www.lynnramirez4sc.com/",
      "img": "https://content.campaignpartner.net/images/cdn_queue/152730/17a277af512347278303a4af620ed1e0.jpg",
-     "imgPos": "66% 25%"
+     "imgPos": "100% 25%"
     }
    ],
    "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
@@ -1765,7 +1765,9 @@ window.GUIDE = {
     {
      "name": "Virginia B. Maclure",
      "party": "Democratic",
-     "url": "https://votevirginiasc.org"
+     "url": "https://votevirginiasc.org",
+     "img": "https://img1.wsimg.com/isteam/ip/ea1fc262-ee98-413b-92e9-7249f67c9b4f/head%20shot.jpg/:/cr=t:15%25,l:42%25,w:45%25,h:70%25/rs=w:600,cg:true",
+     "imgPos": "50% 35%"
     }
    ],
    "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
@@ -1840,7 +1842,9 @@ window.GUIDE = {
     },
     {
      "name": "Dexter Reaves",
-     "party": "Democratic"
+     "party": "Democratic",
+     "img": "https://assets.civicengine.com/uploads/candidate/headshot/943467/943467.jpg",
+     "imgPos": "52% 25%"
     }
    ],
    "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
@@ -1865,7 +1869,9 @@ window.GUIDE = {
     {
      "name": "Josh Kendrick",
      "party": "Democratic",
-     "url": "https://www.kendrickforschouse.com/"
+     "url": "https://www.kendrickforschouse.com/",
+     "img": "https://images.squarespace-cdn.com/content/v1/69ff65df30e66c2a80158a0b/3dac4f19-a704-43d1-9876-a8790f6d07c5/KendrickCampaign-13.jpg?format=1000w",
+     "imgPos": "50% 12%"
     }
    ],
    "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
@@ -1912,7 +1918,9 @@ window.GUIDE = {
     {
      "name": "Caroline Avinger",
      "party": "Democratic",
-     "url": "https://www.carolineavinger.com/"
+     "url": "https://www.carolineavinger.com/",
+     "img": "https://images.squarespace-cdn.com/content/v1/69b0017221227366d4c70f68/44d6fac4-bce2-4431-ba03-a9e805d1d3a3/Caroline+Avinger+Headshot.png?format=1000w",
+     "imgPos": "50% 25%"
     }
    ],
    "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
@@ -1959,7 +1967,9 @@ window.GUIDE = {
     {
      "name": "John MacCarthy",
      "party": "Democratic",
-     "url": "https://www.johnmaccarthysc27.com/"
+     "url": "https://www.johnmaccarthysc27.com/",
+     "img": "https://www.johnmaccarthysc27.com/wp-content/uploads/2023/06/Copy-of-John19e.jpg",
+     "imgPos": "70% 30%"
     }
    ],
    "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
@@ -1984,7 +1994,9 @@ window.GUIDE = {
     {
      "name": "Alan G. Buckalew",
      "party": "Democratic",
-     "url": "https://buckalew4staterep.com/"
+     "url": "https://buckalew4staterep.com/",
+     "img": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Alan_Buckalew_20260410_062545.jpg",
+     "imgPos": "55% 20%"
     }
    ],
    "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
@@ -2002,7 +2014,9 @@ window.GUIDE = {
      "name": "Cindy Crick",
      "party": "Republican",
      "role": "13th Circuit Solicitor",
-     "incumbent": true
+     "incumbent": true,
+     "img": "https://www.greenvillecounty.org/Solicitor/img/Crick.jpg",
+     "imgPos": "48% 35%"
     }
    ],
    "about": "The chief prosecutor for Greenville and Pickens counties. Decides which criminal cases go to court.",
@@ -2021,7 +2035,9 @@ window.GUIDE = {
      "name": "Chadwicke L. Groover",
      "party": "Republican",
      "role": "Greenville County Probate Judge",
-     "incumbent": true
+     "incumbent": true,
+     "img": "https://www.greenvillecounty.org/Probate/images/JudgeGroover.jpg",
+     "imgPos": "50% 35%"
     }
    ],
    "about": "Handles wills, estates, guardianships, and marriage licenses.",
@@ -2040,7 +2056,9 @@ window.GUIDE = {
      "name": "Scott Case",
      "party": "Republican",
      "role": "Greenville County Auditor",
-     "incumbent": true
+     "incumbent": true,
+     "img": "https://www.greenvillecounty.org/Auditor/images/scott_casehome.jpg",
+     "imgPos": "50% 30%"
     }
    ],
    "about": "Keeps the property records the county uses to figure out property tax bills.",
@@ -2059,7 +2077,9 @@ window.GUIDE = {
      "name": "Allen Hodges",
      "party": "Republican",
      "role": "Greenville County Treasurer",
-     "incumbent": true
+     "incumbent": true,
+     "img": "https://www.greenvillecounty.org/Treasurer/images/allen_hodgeshome.jpg",
+     "imgPos": "50% 30%"
     }
    ],
    "about": "Collects property taxes and manages county money.",
@@ -2077,7 +2097,9 @@ window.GUIDE = {
     {
      "name": "Joe Dill",
      "party": "Republican",
-     "role": "Former Greenville County Council member, District 17"
+     "role": "Former Greenville County Council member, District 17",
+     "img": "https://assets.civicengine.com/uploads/candidate/headshot/208881/208881.jpg",
+     "imgPos": "52% 40%"
     }
    ],
    "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services.",
@@ -2100,7 +2122,9 @@ window.GUIDE = {
     },
     {
      "name": "Cody Dean",
-     "party": "Democratic"
+     "party": "Democratic",
+     "img": "https://assets.civicengine.com/uploads/candidate/headshot/943742/943742.jpg",
+     "imgPos": "45% 40%"
     }
    ],
    "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services."
@@ -2117,7 +2141,9 @@ window.GUIDE = {
     {
      "name": "David C. Mitchell",
      "party": "Democratic",
-     "url": "https://www.vote4davidcmitchell.com/"
+     "url": "https://www.vote4davidcmitchell.com/",
+     "img": "https://www.vote4davidcmitchell.com/wp-content/uploads/2022/04/DCM_image-300x276.png",
+     "imgPos": "25% 30%"
     }
    ],
    "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services.",
@@ -2134,7 +2160,9 @@ window.GUIDE = {
    "candidates": [
     {
      "name": "Daniel Rumfelt",
-     "party": "Republican"
+     "party": "Republican",
+     "img": "https://assets.civicengine.com/uploads/candidate/headshot/817659/817659.jpg",
+     "imgPos": "50% 30%"
     }
    ],
    "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services.",
@@ -2152,12 +2180,16 @@ window.GUIDE = {
     {
      "name": "Kyle Long",
      "party": "Republican",
-     "url": "https://longfordistrict28.com/"
+     "url": "https://longfordistrict28.com/",
+     "img": "https://longfordistrict28.com/wp-content/uploads/2026/04/kyle-long-District-28-240x300.jpg",
+     "imgPos": "50% 25%"
     },
     {
      "name": "Thomas Sanders",
      "party": "Democratic",
-     "url": "https://www.sandersforcountycouncil.com/"
+     "url": "https://www.sandersforcountycouncil.com/",
+     "img": "https://static.wixstatic.com/media/a4e767_5bfad7617051463d8726e93412656086~mv2.jpg/v1/fit/w_800,h_800,q_85/a4e767_5bfad7617051463d8726e93412656086~mv2.jpg",
+     "imgPos": "40% 30%"
     }
    ],
    "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services."
@@ -2175,10 +2207,14 @@ window.GUIDE = {
      "name": "Bennie R Cantrell"
     },
     {
-     "name": "Robert Giles"
+     "name": "Robert Giles",
+     "img": "https://assets.civicengine.com/uploads/candidate/headshot/970997/970997.jpg",
+     "imgPos": "5% 45%"
     },
     {
-     "name": "Chuck Saylors"
+     "name": "Chuck Saylors",
+     "img": "https://greenville-sc.community.highbond.com/FileStorage/content/UserImages/user-42.jpg",
+     "imgPos": "50% 30%"
     }
    ],
    "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
@@ -2193,10 +2229,14 @@ window.GUIDE = {
    ],
    "candidates": [
     {
-     "name": "Leslie Fatum"
+     "name": "Leslie Fatum",
+     "img": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Leslie-Small-Headshot_20260816_170947_51460_1.jpg",
+     "imgPos": "50% 30%"
     },
     {
-     "name": "Lynda Leventis-Wells"
+     "name": "Lynda Leventis-Wells",
+     "img": "https://greenville-sc.community.highbond.com/FileStorage/content/UserImages/user-49.jpg",
+     "imgPos": "50% 35%"
     }
    ],
    "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
@@ -2211,7 +2251,9 @@ window.GUIDE = {
    ],
    "candidates": [
     {
-     "name": "Anne M. Pressley"
+     "name": "Anne M. Pressley",
+     "img": "https://greenville-sc.community.highbond.com/FileStorage/content/UserImages/user-37.jpg",
+     "imgPos": "50% 35%"
     }
    ],
    "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
@@ -2227,10 +2269,14 @@ window.GUIDE = {
    ],
    "candidates": [
     {
-     "name": "Amanda Brett"
+     "name": "Amanda Brett",
+     "img": "https://greenville-sc.community.highbond.com/FileStorage/content/UserImages/user-34.jpg",
+     "imgPos": "50% 35%"
     },
     {
-     "name": "Stephanie Meek"
+     "name": "Stephanie Meek",
+     "img": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/stephanie-classroom-2_20261008_174126_64961_1.jpg",
+     "imgPos": "50% 25%"
     }
    ],
    "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
@@ -2245,7 +2291,9 @@ window.GUIDE = {
    ],
    "candidates": [
     {
-     "name": "Jeff Cochran"
+     "name": "Jeff Cochran",
+     "img": "https://greenville-sc.community.highbond.com/FileStorage/content/UserImages/user-47.jpg",
+     "imgPos": "50% 30%"
     }
    ],
    "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
