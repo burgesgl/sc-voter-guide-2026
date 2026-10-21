@@ -256,8 +256,8 @@
     var w = n.replace(/["“”].*?["“”]/g, "").replace(/\b(Jr|Sr|II|III|IV)\.?$/i, "").trim().split(/\s+/).filter(function (x) { return x.length > 1 || /[A-Z]/.test(x); });
     return ((w[0] || "")[0] || "") + ((w.length > 1 ? w[w.length - 1][0] : "") || "");
   }
-  function face(name, img) {
-    return '<span class="face">' + (img ? '<img src="' + esc(img) + '" alt="Photo of ' + esc(name) + '" loading="lazy" referrerpolicy="no-referrer">' : "") +
+  function face(name, img, pos) {
+    return '<span class="face">' + (img ? '<img src="' + esc(img) + '" alt="Photo of ' + esc(name) + '" loading="lazy" referrerpolicy="no-referrer"' + (pos ? ' style="object-position:' + esc(pos) + '"' : "") + ">" : "") +
       '<span class="ini" aria-hidden="true">' + esc(initials(name)) + "</span></span>";
   }
   function lastName(n) { var p = n.replace(/,? (Jr\.|Sr\.|II|III|IV)$/, "").trim().split(" "); return p[p.length - 1].toLowerCase(); }
@@ -269,7 +269,7 @@
     var showMateImg = showImg && mates.every(function (c) { return !!c.runningImg; });
     var list = cands.length ? '<ul class="people">' + cands.map(function (c) {
       var chips = (c.party ? '<span class="chip">' + esc(c.party) + "</span>" : "") + (c.incumbent ? '<span class="chip now">Holds this job now</span>' : "");
-      return '<li class="person">' + face(c.name, showImg ? c.img : null) + '<div><span class="name">' + esc(c.name) + "</span>" +
+      return '<li class="person">' + face(c.name, showImg ? c.img : null, c.imgPos) + '<div><span class="name">' + esc(c.name) + "</span>" +
         (chips ? '<span class="chips">' + chips + "</span>" : "") +
         (c.role ? '<span class="role">' + esc(c.role) + "</span>" : "") +
         (c.running ? '<span class="mate">' + face(c.running, showMateImg ? c.runningImg : null) + "<span>Running mate: <b>" + esc(c.running) + "</b></span></span>" : "") +

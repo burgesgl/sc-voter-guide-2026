@@ -836,8 +836,7 @@ window.GUIDE = {
      "name": "Bill Chumley",
      "party": "Republican",
      "role": "SC House member, District 35",
-     "incumbent": true,
-     "img": "https://www.scstatehouse.gov/images/members/0351704504.jpg"
+     "incumbent": true
     },
     {
      "name": "Tatiana Skipper",
@@ -1681,7 +1680,8 @@ window.GUIDE = {
      "name": "Neal Collins",
      "party": "Republican",
      "role": "SC House member, District 5",
-     "incumbent": true
+     "incumbent": true,
+     "img": "https://www.scstatehouse.gov/images/members/0388636317.jpg"
     },
     {
      "name": "David F. Jones",
@@ -1704,12 +1704,15 @@ window.GUIDE = {
      "name": "Mark N. Willis",
      "party": "Republican",
      "role": "SC House member, District 16",
-     "incumbent": true
+     "incumbent": true,
+     "img": "https://www.scstatehouse.gov/images/members/1942613404.jpg"
     },
     {
      "name": "Lynn Ramirez",
      "party": "Democratic",
-     "url": "https://www.lynnramirez4sc.com/"
+     "url": "https://www.lynnramirez4sc.com/",
+     "img": "https://content.campaignpartner.net/images/cdn_queue/152730/17a277af512347278303a4af620ed1e0.jpg",
+     "imgPos": "66% 25%"
     }
    ],
    "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
@@ -1728,12 +1731,14 @@ window.GUIDE = {
      "name": "Mike Burns",
      "party": "Republican",
      "role": "SC House member, District 17",
-     "incumbent": true
+     "incumbent": true,
+     "img": "https://www.scstatehouse.gov/images/members/0257954515.jpg"
     },
     {
      "name": "Rich Nicoloff",
      "party": "Democratic",
-     "url": "https://rich4sc.org/"
+     "url": "https://rich4sc.org/",
+     "img": "https://rich4sc.org/wp-content/uploads/2014/09/83A1030.jpg"
     }
    ],
    "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
@@ -1753,7 +1758,8 @@ window.GUIDE = {
      "party": "Republican",
      "role": "SC House member, District 18",
      "incumbent": true,
-     "url": "https://morganforsc.com/"
+     "url": "https://morganforsc.com/",
+     "img": "https://www.scstatehouse.gov/images/members/1374999835.jpg"
     },
     {
      "name": "Virginia B. Maclure",
@@ -1777,12 +1783,14 @@ window.GUIDE = {
      "name": "Patrick B. Haddon",
      "party": "Republican",
      "role": "SC House member, District 19",
-     "incumbent": true
+     "incumbent": true,
+     "img": "https://www.scstatehouse.gov/images/members/0733806731.jpg"
     },
     {
      "name": "Rachel Smith",
      "party": "Democratic",
-     "url": "https://www.rachelsmithforsc19.com/"
+     "url": "https://www.rachelsmithforsc19.com/",
+     "img": "https://static.wixstatic.com/media/37a052_80220fd6d41f4ef6af603e92a4322c06~mv2.png/v1/fill/w_1040,h_1370,fp_0.50_0.50,q_90,usm_0.66_1.00_0.01,enc_auto/9a1add93-cdc0-43af-bd60-7bb1ed5413dc.png"
     }
    ],
    "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
@@ -1801,7 +1809,8 @@ window.GUIDE = {
      "name": "Stephen Frank",
      "party": "Republican",
      "role": "SC House member, District 20",
-     "incumbent": true
+     "incumbent": true,
+     "img": "https://www.scstatehouse.gov/images/members/0614772654.jpg"
     },
     {
      "name": "Polly Elbertse",
@@ -1825,7 +1834,8 @@ window.GUIDE = {
      "party": "Republican",
      "role": "SC House member, District 21",
      "incumbent": true,
-     "url": "https://www.mitchellforhouse.com/"
+     "url": "https://www.mitchellforhouse.com/",
+     "img": "https://www.scstatehouse.gov/images/members/1344175976.jpg"
     },
     {
      "name": "Dexter Reaves",
@@ -1848,7 +1858,8 @@ window.GUIDE = {
      "name": "Paul Wickensimer",
      "party": "Republican",
      "role": "SC House member, District 22",
-     "incumbent": true
+     "incumbent": true,
+     "img": "https://www.scstatehouse.gov/images/members/1914630453.jpg"
     },
     {
      "name": "Josh Kendrick",
@@ -1873,7 +1884,8 @@ window.GUIDE = {
      "party": "Democratic",
      "role": "SC House member, District 23",
      "incumbent": true,
-     "url": "https://www.chandradillard.com/"
+     "url": "https://www.chandradillard.com/",
+     "img": "https://www.scstatehouse.gov/images/members/0479545397.jpg"
     }
    ],
    "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
@@ -1893,7 +1905,8 @@ window.GUIDE = {
      "name": "Bruce Bannister",
      "party": "Republican",
      "role": "SC House member, District 24",
-     "incumbent": true
+     "incumbent": true,
+     "img": "https://www.scstatehouse.gov/images/members/0103409079.jpg"
     },
     {
      "name": "Caroline Avinger",
@@ -1918,7 +1931,8 @@ window.GUIDE = {
      "party": "Democratic",
      "role": "SC House member, District 25",
      "incumbent": true,
-     "url": "https://www.wendellkjones.com/"
+     "url": "https://www.wendellkjones.com/",
+     "img": "https://www.scstatehouse.gov/images/members/0953408977.jpg"
     }
    ],
    "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
@@ -1938,7 +1952,8 @@ window.GUIDE = {
      "name": "David Vaughan",
      "party": "Republican",
      "role": "SC House member, District 27",
-     "incumbent": true
+     "incumbent": true,
+     "img": "https://www.scstatehouse.gov/images/members/1865908867.jpg"
     },
     {
      "name": "John MacCarthy",
@@ -1962,7 +1977,8 @@ window.GUIDE = {
      "name": "Chris Huff",
      "party": "Republican",
      "role": "SC House member, District 28",
-     "incumbent": true
+     "incumbent": true,
+     "img": "https://www.scstatehouse.gov/images/members/0893181711.jpg"
     },
     {
      "name": "Alan G. Buckalew",
