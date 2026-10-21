@@ -9,7 +9,12 @@
       statewide: '<path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/>',
       federal: '<path d="M3 21h18"/><path d="M5 21v-7h14v7"/><path d="M8.5 14v7M12 14v7M15.5 14v7"/><path d="M5 14a7 7 0 0 1 14 0"/><path d="M12 7V3.5"/>',
       stateHouse: '<rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/>',
-      county: '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
+      county: '<path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/>',
+      home: '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
+      plan: '<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M9 12l2 2 4-4"/>',
+      ballot: '<path d="M4 9h16v11H4z"/><path d="M8 9V4h8v5"/><path d="M9 14h6"/>',
+      help: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5v.4"/><path d="M12 17h.01"/>',
+      next: '<path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>',
       school: '<path d="M4 19V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M8 7h7"/>',
       questions: '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12l3 3 5-6"/>',
       pin: '<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
@@ -222,7 +227,7 @@
   /* ---------- ballot ---------- */
   var TABS = [
     { id: "statewide", label: "Statewide" }, { id: "federal", label: "Congress" }, { id: "stateHouse", label: "SC House" },
-    { id: "county", label: "County" }, { id: "school", label: "School boards" }, { id: "questions", label: "Yes/No questions" }
+    { id: "county", label: "County" }, { id: "school", label: "School board" }, { id: "questions", label: "Yes/No votes" }
   ];
   function inCounty(item) {
     if (!item.counties || item.counties === "all") return true;
@@ -237,7 +242,7 @@
     $("ballot-tabs").innerHTML = TABS.map(function (t) {
       var n = itemsFor(t.id).length;
       return '<button type="button" class="tab" role="tab" id="tab-' + t.id + '" aria-selected="' + (state.tab === t.id) + '" aria-controls="ballot-panel" tabindex="' + (state.tab === t.id ? 0 : -1) + '">' +
-        icon(t.id, 18) + esc(t.label) + (n ? ' <span class="count">' + n + "</span>" : "") + "</button>";
+        icon(t.id, 18) + '<span class="tl-label">' + esc(t.label) + "</span>" + (n ? '<span class="count">' + n + "</span>" : "") + "</button>";
     }).join("");
     var hint = $("county-hint"), co = G.counties[state.county];
     hint.innerHTML = co ? "Showing races for <b>" + esc(co.name + " County") + "</b>. " + '<a href="#plan">Change</a>' :
@@ -301,6 +306,13 @@
         });
       }
     }
+    var idx = TABS.findIndex(function (t) { return t.id === state.tab; });
+    if (idx < TABS.length - 1) {
+      var nx = TABS[idx + 1];
+      html += '<button type="button" class="next-tab" data-next="' + nx.id + '">Next: ' + esc(nx.label) + icon("next", 18) + "</button>";
+    } else {
+      html += '<a class="next-tab" href="#control">Next: Why Congress matters' + icon("next", 18) + "</a>";
+    }
     panel.innerHTML = html;
     if (fromTab) { panel.classList.remove("swap"); void panel.offsetWidth; panel.classList.add("swap"); }
     var sel = $("house-sel");
@@ -342,18 +354,38 @@
     $("source-list").innerHTML = G.sources.map(function (s) { return "<li>" + link(s.url, s.title) + "</li>"; }).join("");
   }
 
-  /* ---------- sticky jump bar ---------- */
-  function setupJump() {
-    var bar = $("jump"), top = $("top"), links = bar.querySelectorAll("a");
-    if (!("IntersectionObserver" in window)) { bar.classList.add("show"); return; }
-    new IntersectionObserver(function (es) { bar.classList.toggle("show", !es[0].isIntersecting); }, { threshold: 0 }).observe(top);
-    var secs = ["plan", "ballot", "control", "help"].map($);
-    var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) {
-        if (e.isIntersecting) Array.prototype.forEach.call(links, function (a) { a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id); });
+  /* ---------- navigation dock: bottom bar on phones, top bar on wide screens ---------- */
+  function setupNav() {
+    var items = [
+      { id: "top", label: "Home", ic: "home" }, { id: "plan", label: "My plan", ic: "plan" },
+      { id: "ballot", label: "Ballot", ic: "ballot" }, { id: "control", label: "Congress", ic: "federal" },
+      { id: "help", label: "Help", ic: "help" }
+    ];
+    var dock = $("dock"), inner = $("dock-inner");
+    inner.innerHTML = items.map(function (it) {
+      return '<a href="#' + it.id + '" data-sec="' + it.id + '">' + icon(it.ic, 22) + "<span>" + esc(it.label) + "</span></a>";
+    }).join("");
+    var links = inner.querySelectorAll("a"), secs = items.map(function (it) { return $(it.id); }), header = $("top");
+    inner.addEventListener("click", function (e) {
+      var a = e.target.closest("a"); if (!a) return;
+      if (a.getAttribute("data-sec") === "top") { e.preventDefault(); window.scrollTo({ top: 0 }); history.replaceState(null, "", location.pathname + location.search); }
+    });
+    var ticking = false;
+    function update() {
+      ticking = false;
+      dock.classList.toggle("show", window.scrollY > header.offsetHeight - 80);
+      var line = window.innerHeight * 0.35, cur = "top";
+      secs.forEach(function (el, i) { if (el && el.getBoundingClientRect().top <= line) cur = items[i].id; });
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) cur = "help";
+      Array.prototype.forEach.call(links, function (a) {
+        var on = a.getAttribute("data-sec") === cur;
+        a.classList.toggle("on", on);
+        if (on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
       });
-    }, { rootMargin: "-45% 0px -50% 0px" });
-    secs.forEach(function (s) { io.observe(s); });
+    }
+    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener("resize", update);
+    update();
   }
 
   /* ---------- start ---------- */
@@ -362,18 +394,29 @@
   ovals("county-choices", "county", countyOptions(), function (v) { state.county = v; state.house = "all"; renderPlan(!state.method ? false : true); renderBallot(); });
   ovals("method-choices", "method", methodOptions(), function (v) { var first = !state.method; state.method = v; state.evDay = null; renderPlan(true); if (first && state.county) setTimeout(function () { $("plan-card").scrollIntoView({ block: "nearest" }); }, 60); });
   var tabsEl = $("ballot-tabs");
+  function goTab(id, scroll) {
+    state.tab = id; renderBallot(true);
+    var btn = $("tab-" + id);
+    if (scroll || tabsEl.getBoundingClientRect().top < 0) tabsEl.scrollIntoView({ block: "start" });
+    btn.focus({ preventScroll: true });
+    if (btn.scrollIntoView && tabsEl.scrollWidth > tabsEl.clientWidth) btn.scrollIntoView({ block: "nearest", inline: "center" });
+  }
   tabsEl.addEventListener("click", function (e) {
     var b = e.target.closest(".tab"); if (!b) return;
-    state.tab = b.id.replace("tab-", ""); renderBallot(true); $(b.id).focus();
+    goTab(b.id.replace("tab-", ""), false);
+  });
+  $("ballot-panel").addEventListener("click", function (e) {
+    var b = e.target.closest("button.next-tab"); if (!b) return;
+    goTab(b.getAttribute("data-next"), true);
   });
   tabsEl.addEventListener("keydown", function (e) {
     if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
     var i = TABS.findIndex(function (t) { return t.id === state.tab; });
     i = (i + (e.key === "ArrowRight" ? 1 : TABS.length - 1)) % TABS.length;
-    state.tab = TABS[i].id; renderBallot(true); $("tab-" + state.tab).focus();
+    goTab(TABS[i].id, false);
   });
   renderBallot();
   renderControl();
   renderFAQ();
-  setupJump();
+  setupNav();
 })();
