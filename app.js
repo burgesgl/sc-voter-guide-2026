@@ -343,14 +343,15 @@
         s.points.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") + '</ul><p class="reads">' +
         s.links.map(function (l) { return link(l.url, l.title); }).join("") + "</p></div>";
     }).join("");
-    var GN = G.groundNews;
-    if (GN) {
-      $("coverage").innerHTML = '<div class="gn-card"><div class="gn-head">' + icon("news", 24) + "<h3>" + esc(GN.title) + "</h3></div>" +
-        GN.blurb.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") +
-        '<a class="btn gn-btn" href="' + esc(GN.url) + '" target="_blank" rel="noopener">Open Ground News' + icon("next", 18) + "</a>" +
-        (C.coverage && C.coverage.length ? '<p class="gn-topics">Jump to a topic: ' + C.coverage.map(function (l) { return link(l.url, l.title); }).join(" · ") + "</p>" : "") +
-        '<p class="fine">' + esc(GN.note) + "</p></div>";
-    }
+  }
+  function renderNews() {
+    var GN = G.groundNews, C = G.control;
+    if (!GN) { $("news").hidden = true; return; }
+    $("gn").innerHTML = '<p class="lede gn-sub">' + esc(GN.title) + "</p>" +
+      '<div class="gn-card">' + GN.blurb.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") +
+      '<a class="btn gn-btn" href="' + esc(GN.url) + '" target="_blank" rel="noopener">Open Ground News' + icon("next", 18) + "</a>" +
+      (C && C.coverage && C.coverage.length ? '<p class="gn-topics">Or jump straight to a topic:</p><ul class="gn-list">' + C.coverage.map(function (l) { return "<li>" + link(l.url, l.title) + "</li>"; }).join("") + "</ul>" : "") +
+      '<p class="fine">' + esc(GN.note) + "</p></div>";
   }
   function renderFAQ() {
     $("faq").innerHTML = G.faq.map(function (f) { return "<details><summary>" + esc(f.q) + "</summary><div>" + f.a + "</div></details>"; }).join("");
@@ -366,11 +367,11 @@
     var items = [
       { id: "top", label: "Home", ic: "home" }, { id: "plan", label: "My plan", ic: "plan" },
       { id: "ballot", label: "Ballot", ic: "ballot" }, { id: "control", label: "Congress", ic: "federal" },
-      { id: "help", label: "Help", ic: "help" }
+      { id: "news", label: "News", long: "Ground News", ic: "news" }, { id: "help", label: "Help", ic: "help" }
     ];
     var dock = $("dock"), inner = $("dock-inner");
     inner.innerHTML = items.map(function (it) {
-      return '<a href="#' + it.id + '" data-sec="' + it.id + '">' + icon(it.ic, 22) + "<span>" + esc(it.label) + "</span></a>";
+      return '<a href="#' + it.id + '" data-sec="' + it.id + '"' + (it.long ? ' aria-label="' + esc(it.long) + '"' : "") + ">" + icon(it.ic, 22) + (it.long ? '<span class="lbl-short">' + esc(it.label) + '</span><span class="lbl-long">' + esc(it.long) + "</span>" : "<span>" + esc(it.label) + "</span>") + "</a>";
     }).join("");
     var links = inner.querySelectorAll("a"), secs = items.map(function (it) { return $(it.id); }), header = $("top");
     inner.addEventListener("click", function (e) {
@@ -424,6 +425,7 @@
   });
   renderBallot();
   renderControl();
+  renderNews();
   renderFAQ();
   setupNav();
 })();
