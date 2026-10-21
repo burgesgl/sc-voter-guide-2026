@@ -836,7 +836,8 @@ window.GUIDE = {
      "name": "Bill Chumley",
      "party": "Republican",
      "role": "SC House member, District 35",
-     "incumbent": true
+     "incumbent": true,
+     "img": "https://www.scstatehouse.gov/images/members/0351704504.jpg"
     },
     {
      "name": "Tatiana Skipper",
