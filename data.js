@@ -96,6 +96,46 @@ window.GUIDE = {
    ],
    "localNote": "Some Anderson County voters will also see a neighborhood question, a city or town race (Clemson, Williamston, Starr), or a water district seat. Your sample ballot shows exactly what's on yours."
   },
+  "greenville": {
+   "name": "Greenville",
+   "office": {
+    "name": "Greenville County Voter Registration & Elections",
+    "address": "225 S. Pleasantburg Dr., Suite B6, Greenville, SC 29607",
+    "phone": "(864) 467-7250"
+   },
+   "sitesUrl": "https://www.greenvillecounty.org/VoterRegistration/pdf/2026EarlyVotingSitesStatewideGeneral.pdf",
+   "sites": [
+    {
+     "name": "McAlister Square (back entrance)",
+     "address": "225 S. Pleasantburg Dr., Greenville, SC 29607"
+    },
+    {
+     "name": "Mt. Pleasant Community Center",
+     "address": "710 S. Fairfield Rd., Greenville, SC 29605"
+    },
+    {
+     "name": "Praise Cathedral (Family Life Center)",
+     "address": "3375 Brushy Creek Rd., Greer, SC 29650"
+    },
+    {
+     "name": "Cedar Grove Missionary Baptist Church (gym)",
+     "address": "206 Moore St., Simpsonville, SC 29681"
+    },
+    {
+     "name": "Greenville Technical College, Northwest Campus",
+     "address": "8109 Whitehorse Rd., Greenville, SC 29617"
+    },
+    {
+     "name": "City of Greenville Public Works",
+     "address": "475 Fairforest Way, Greenville, SC 29607"
+    },
+    {
+     "name": "Greenville County Library, Five Forks Branch",
+     "address": "104 Sunnydale Dr., Simpsonville, SC 29681"
+    }
+   ],
+   "localNote": "Some Greenville County voters will also see a watershed district or fire district race. Your sample ballot shows exactly what's on yours."
+  },
   "spartanburg": {
    "name": "Spartanburg",
    "office": {
@@ -207,7 +247,7 @@ window.GUIDE = {
    "id": "attorney_general",
    "level": "statewide",
    "title": "Attorney General",
-   "where": "Everyone in South Carolina votes on this. Open seat: nobody currently holds it.",
+   "where": "Everyone in South Carolina votes on this. Open seat: the person who holds it now isn't running.",
    "candidates": [
     {
      "name": "Richard Hricik",
@@ -253,7 +293,7 @@ window.GUIDE = {
    "id": "comptroller_general",
    "level": "statewide",
    "title": "Comptroller General",
-   "where": "Everyone in South Carolina votes on this. Open seat: nobody currently holds it.",
+   "where": "Everyone in South Carolina votes on this. Open seat: the person who holds it now isn't running.",
    "candidates": [
     {
      "name": "Tiffany Boozer",
@@ -307,7 +347,7 @@ window.GUIDE = {
    "id": "commissioner_of_agriculture",
    "level": "statewide",
    "title": "Commissioner of Agriculture",
-   "where": "Everyone in South Carolina votes on this. Open seat: nobody currently holds it.",
+   "where": "Everyone in South Carolina votes on this. Open seat: the person who holds it now isn't running.",
    "candidates": [
     {
      "name": "DeShawn Blanding",
@@ -378,9 +418,10 @@ window.GUIDE = {
    "id": "SC-3",
    "level": "federal",
    "title": "U.S. House, 3rd District",
-   "where": "All of Anderson County.",
+   "where": "All of Anderson County and the southern edge of Greenville County (Fountain Inn, Ware Place, Piedmont, and part of Golden Grove), plus several other Upstate counties.",
    "counties": [
-    "anderson"
+    "anderson",
+    "greenville"
    ],
    "candidates": [
     {
@@ -411,9 +452,10 @@ window.GUIDE = {
    "id": "SC-4",
    "level": "federal",
    "title": "U.S. House, 4th District",
-   "where": "Most of Spartanburg County, including the city of Spartanburg.",
+   "where": "Most of Greenville County, including Greenville, Greer, Mauldin, Simpsonville, and Travelers Rest. Also most of Spartanburg County, including the city of Spartanburg.",
    "counties": [
-    "spartanburg"
+    "spartanburg",
+    "greenville"
    ],
    "candidates": [
     {
@@ -441,7 +483,7 @@ window.GUIDE = {
    "id": "SC-5",
    "level": "federal",
    "title": "U.S. House, 5th District",
-   "where": "Northern and eastern Spartanburg County, including Chesnee, Cowpens, Fingerville, Mayo, and parts of Boiling Springs and Converse. Open seat: nobody currently holds it.",
+   "where": "Northern and eastern Spartanburg County, including Chesnee, Cowpens, Fingerville, Mayo, and parts of Boiling Springs and Converse. Open seat: the person who holds it now isn't running.",
    "counties": [
     "spartanburg"
    ],
@@ -492,7 +534,8 @@ window.GUIDE = {
    "title": "SC House District 7",
    "where": "Anderson County. Also covers parts of Abbeville and Greenville counties.",
    "counties": [
-    "anderson"
+    "anderson",
+    "greenville"
    ],
    "num": 7,
    "candidates": [
@@ -568,7 +611,8 @@ window.GUIDE = {
    "title": "SC House District 10",
    "where": "Anderson County. Also covers parts of Greenville and Pickens counties.",
    "counties": [
-    "anderson"
+    "anderson",
+    "greenville"
    ],
    "num": 10,
    "candidates": [
@@ -783,12 +827,13 @@ window.GUIDE = {
    "title": "SC House District 35",
    "where": "Spartanburg County. Also covers part of Greenville County.",
    "counties": [
-    "spartanburg"
+    "spartanburg",
+    "greenville"
    ],
    "num": 35,
    "candidates": [
     {
-     "name": "William M. \"Bill\" Chumley",
+     "name": "Bill Chumley",
      "party": "Republican",
      "role": "SC House member, District 35",
      "incumbent": true,
@@ -950,7 +995,7 @@ window.GUIDE = {
    "id": "anderson-county-council-district-4",
    "level": "county",
    "title": "Anderson County Council District 4",
-   "where": "Anderson County. Open seat: nobody currently holds it.",
+   "where": "Anderson County. Open seat: the person who holds it now isn't running.",
    "counties": [
     "anderson"
    ],
@@ -1103,7 +1148,7 @@ window.GUIDE = {
    "id": "spartanburg-county-council-chair",
    "level": "county",
    "title": "Spartanburg County Council Chair",
-   "where": "Spartanburg County, whole county votes. Open seat: nobody currently holds it.",
+   "where": "Spartanburg County, whole county votes. Open seat: the person who holds it now isn't running.",
    "counties": [
     "spartanburg"
    ],
@@ -1319,9 +1364,10 @@ window.GUIDE = {
    "id": "sb-anderson-school-district-2-at-large",
    "level": "school",
    "title": "Anderson School District 2, At-Large",
-   "where": "Anderson County. No party labels on the ballot.",
+   "where": "Anderson County, plus the part of Anderson School District 2 that reaches into Greenville County. No party labels on the ballot.",
    "counties": [
-    "anderson"
+    "anderson",
+    "greenville"
    ],
    "candidates": [
     {
@@ -1604,9 +1650,10 @@ window.GUIDE = {
    "id": "sb-gvl18",
    "level": "school",
    "title": "Greenville County School Board, District 18",
-   "where": "The part of this district that reaches into Spartanburg County. No party labels on the ballot.",
+   "where": "Greenville County Schools District 18, which also reaches into Spartanburg County. No party labels on the ballot.",
    "counties": [
-    "spartanburg"
+    "spartanburg",
+    "greenville"
    ],
    "candidates": [
     {
@@ -1619,6 +1666,592 @@ window.GUIDE = {
     }
    ],
    "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+  },
+  {
+   "id": "hd5",
+   "level": "stateHouse",
+   "title": "SC House District 5",
+   "where": "Covers parts of Greenville and Pickens counties.",
+   "counties": [
+    "greenville"
+   ],
+   "num": 5,
+   "candidates": [
+    {
+     "name": "Neal Collins",
+     "party": "Republican",
+     "role": "SC House member, District 5",
+     "incumbent": true
+    },
+    {
+     "name": "David F. Jones",
+     "party": "Democratic"
+    }
+   ],
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+  },
+  {
+   "id": "hd16",
+   "level": "stateHouse",
+   "title": "SC House District 16",
+   "where": "Greenville County. Also covers part of Laurens County.",
+   "counties": [
+    "greenville"
+   ],
+   "num": 16,
+   "candidates": [
+    {
+     "name": "Mark N. Willis",
+     "party": "Republican",
+     "role": "SC House member, District 16",
+     "incumbent": true
+    },
+    {
+     "name": "Lynn Ramirez",
+     "party": "Democratic",
+     "url": "https://www.lynnramirez4sc.com/"
+    }
+   ],
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+  },
+  {
+   "id": "hd17",
+   "level": "stateHouse",
+   "title": "SC House District 17",
+   "where": "Greenville County.",
+   "counties": [
+    "greenville"
+   ],
+   "num": 17,
+   "candidates": [
+    {
+     "name": "Mike Burns",
+     "party": "Republican",
+     "role": "SC House member, District 17",
+     "incumbent": true
+    },
+    {
+     "name": "Rich Nicoloff",
+     "party": "Democratic",
+     "url": "https://rich4sc.org/"
+    }
+   ],
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+  },
+  {
+   "id": "hd18",
+   "level": "stateHouse",
+   "title": "SC House District 18",
+   "where": "Greenville County.",
+   "counties": [
+    "greenville"
+   ],
+   "num": 18,
+   "candidates": [
+    {
+     "name": "Alan Morgan",
+     "party": "Republican",
+     "role": "SC House member, District 18",
+     "incumbent": true,
+     "url": "https://morganforsc.com/"
+    },
+    {
+     "name": "Virginia B. Maclure",
+     "party": "Democratic",
+     "url": "https://votevirginiasc.org"
+    }
+   ],
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+  },
+  {
+   "id": "hd19",
+   "level": "stateHouse",
+   "title": "SC House District 19",
+   "where": "Greenville County.",
+   "counties": [
+    "greenville"
+   ],
+   "num": 19,
+   "candidates": [
+    {
+     "name": "Patrick B. Haddon",
+     "party": "Republican",
+     "role": "SC House member, District 19",
+     "incumbent": true
+    },
+    {
+     "name": "Rachel Smith",
+     "party": "Democratic",
+     "url": "https://www.rachelsmithforsc19.com/"
+    }
+   ],
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+  },
+  {
+   "id": "hd20",
+   "level": "stateHouse",
+   "title": "SC House District 20",
+   "where": "Greenville County.",
+   "counties": [
+    "greenville"
+   ],
+   "num": 20,
+   "candidates": [
+    {
+     "name": "Stephen Frank",
+     "party": "Republican",
+     "role": "SC House member, District 20",
+     "incumbent": true
+    },
+    {
+     "name": "Polly Elbertse",
+     "party": "Democratic"
+    }
+   ],
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+  },
+  {
+   "id": "hd21",
+   "level": "stateHouse",
+   "title": "SC House District 21",
+   "where": "Greenville County.",
+   "counties": [
+    "greenville"
+   ],
+   "num": 21,
+   "candidates": [
+    {
+     "name": "Dianne Mitchell",
+     "party": "Republican",
+     "role": "SC House member, District 21",
+     "incumbent": true,
+     "url": "https://www.mitchellforhouse.com/"
+    },
+    {
+     "name": "Dexter Reaves",
+     "party": "Democratic"
+    }
+   ],
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+  },
+  {
+   "id": "hd22",
+   "level": "stateHouse",
+   "title": "SC House District 22",
+   "where": "Greenville County.",
+   "counties": [
+    "greenville"
+   ],
+   "num": 22,
+   "candidates": [
+    {
+     "name": "Paul Wickensimer",
+     "party": "Republican",
+     "role": "SC House member, District 22",
+     "incumbent": true
+    },
+    {
+     "name": "Josh Kendrick",
+     "party": "Democratic",
+     "url": "https://www.kendrickforschouse.com/"
+    }
+   ],
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+  },
+  {
+   "id": "hd23",
+   "level": "stateHouse",
+   "title": "SC House District 23",
+   "where": "Greenville County.",
+   "counties": [
+    "greenville"
+   ],
+   "num": 23,
+   "candidates": [
+    {
+     "name": "Chandra Dillard",
+     "party": "Democratic",
+     "role": "SC House member, District 23",
+     "incumbent": true,
+     "url": "https://www.chandradillard.com/"
+    }
+   ],
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "note": "Only one name on the ballot."
+  },
+  {
+   "id": "hd24",
+   "level": "stateHouse",
+   "title": "SC House District 24",
+   "where": "Greenville County.",
+   "counties": [
+    "greenville"
+   ],
+   "num": 24,
+   "candidates": [
+    {
+     "name": "Bruce Bannister",
+     "party": "Republican",
+     "role": "SC House member, District 24",
+     "incumbent": true
+    },
+    {
+     "name": "Caroline Avinger",
+     "party": "Democratic",
+     "url": "https://www.carolineavinger.com/"
+    }
+   ],
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+  },
+  {
+   "id": "hd25",
+   "level": "stateHouse",
+   "title": "SC House District 25",
+   "where": "Greenville County.",
+   "counties": [
+    "greenville"
+   ],
+   "num": 25,
+   "candidates": [
+    {
+     "name": "Wendell Jones",
+     "party": "Democratic",
+     "role": "SC House member, District 25",
+     "incumbent": true,
+     "url": "https://www.wendellkjones.com/"
+    }
+   ],
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding.",
+   "note": "Only one name on the ballot."
+  },
+  {
+   "id": "hd27",
+   "level": "stateHouse",
+   "title": "SC House District 27",
+   "where": "Greenville County.",
+   "counties": [
+    "greenville"
+   ],
+   "num": 27,
+   "candidates": [
+    {
+     "name": "David Vaughan",
+     "party": "Republican",
+     "role": "SC House member, District 27",
+     "incumbent": true
+    },
+    {
+     "name": "John MacCarthy",
+     "party": "Democratic",
+     "url": "https://www.johnmaccarthysc27.com/"
+    }
+   ],
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+  },
+  {
+   "id": "hd28",
+   "level": "stateHouse",
+   "title": "SC House District 28",
+   "where": "Greenville County.",
+   "counties": [
+    "greenville"
+   ],
+   "num": 28,
+   "candidates": [
+    {
+     "name": "Chris Huff",
+     "party": "Republican",
+     "role": "SC House member, District 28",
+     "incumbent": true
+    },
+    {
+     "name": "Alan G. Buckalew",
+     "party": "Democratic",
+     "url": "https://buckalew4staterep.com/"
+    }
+   ],
+   "about": "Writes and votes on state laws, including the state budget, taxes, and school funding."
+  },
+  {
+   "id": "greenville-solicitor-13th-judicial-circuit",
+   "level": "county",
+   "title": "13th Circuit Solicitor",
+   "where": "Greenville and Pickens counties vote on this.",
+   "counties": [
+    "greenville"
+   ],
+   "candidates": [
+    {
+     "name": "Cindy Crick",
+     "party": "Republican",
+     "role": "13th Circuit Solicitor",
+     "incumbent": true
+    }
+   ],
+   "about": "The chief prosecutor for Greenville and Pickens counties. Decides which criminal cases go to court.",
+   "note": "Only one name on the ballot."
+  },
+  {
+   "id": "greenville-probate-judge",
+   "level": "county",
+   "title": "Greenville Probate Judge",
+   "where": "Greenville County, whole county votes.",
+   "counties": [
+    "greenville"
+   ],
+   "candidates": [
+    {
+     "name": "Chadwicke L. Groover",
+     "party": "Republican",
+     "role": "Greenville County Probate Judge",
+     "incumbent": true
+    }
+   ],
+   "about": "Handles wills, estates, guardianships, and marriage licenses.",
+   "note": "Only one name on the ballot."
+  },
+  {
+   "id": "greenville-auditor",
+   "level": "county",
+   "title": "Greenville Auditor",
+   "where": "Greenville County, whole county votes.",
+   "counties": [
+    "greenville"
+   ],
+   "candidates": [
+    {
+     "name": "Scott Case",
+     "party": "Republican",
+     "role": "Greenville County Auditor",
+     "incumbent": true
+    }
+   ],
+   "about": "Keeps the property records the county uses to figure out property tax bills.",
+   "note": "Only one name on the ballot."
+  },
+  {
+   "id": "greenville-county-treasurer",
+   "level": "county",
+   "title": "Greenville Treasurer",
+   "where": "Greenville County, whole county votes.",
+   "counties": [
+    "greenville"
+   ],
+   "candidates": [
+    {
+     "name": "Allen Hodges",
+     "party": "Republican",
+     "role": "Greenville County Treasurer",
+     "incumbent": true
+    }
+   ],
+   "about": "Collects property taxes and manages county money.",
+   "note": "Only one name on the ballot."
+  },
+  {
+   "id": "greenville-county-council-district-17",
+   "level": "county",
+   "title": "Greenville County Council District 17",
+   "where": "Greenville County. Open seat: the person who holds it now isn't running.",
+   "counties": [
+    "greenville"
+   ],
+   "candidates": [
+    {
+     "name": "Joe Dill",
+     "party": "Republican",
+     "role": "Former Greenville County Council member, District 17"
+    }
+   ],
+   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services.",
+   "note": "Only one name on the ballot."
+  },
+  {
+   "id": "greenville-county-council-district-19",
+   "level": "county",
+   "title": "Greenville County Council District 19",
+   "where": "Greenville County.",
+   "counties": [
+    "greenville"
+   ],
+   "candidates": [
+    {
+     "name": "Benton Blount",
+     "party": "Republican",
+     "role": "Greenville County Council member, District 19",
+     "incumbent": true
+    },
+    {
+     "name": "Cody Dean",
+     "party": "Democratic"
+    }
+   ],
+   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services."
+  },
+  {
+   "id": "greenville-county-council-district-23",
+   "level": "county",
+   "title": "Greenville County Council District 23",
+   "where": "Greenville County.",
+   "counties": [
+    "greenville"
+   ],
+   "candidates": [
+    {
+     "name": "David C. Mitchell",
+     "party": "Democratic",
+     "url": "https://www.vote4davidcmitchell.com/"
+    }
+   ],
+   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services.",
+   "note": "Only one name on the ballot. The current council member lost in the June primary, so this seat will have someone new."
+  },
+  {
+   "id": "greenville-county-council-district-26",
+   "level": "county",
+   "title": "Greenville County Council District 26",
+   "where": "Greenville County.",
+   "counties": [
+    "greenville"
+   ],
+   "candidates": [
+    {
+     "name": "Daniel Rumfelt",
+     "party": "Republican"
+    }
+   ],
+   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services.",
+   "note": "Only one name on the ballot. The current council member lost in the June primary, so this seat will have someone new."
+  },
+  {
+   "id": "greenville-county-council-district-28",
+   "level": "county",
+   "title": "Greenville County Council District 28",
+   "where": "Greenville County. Open seat: the person who holds it now isn't running.",
+   "counties": [
+    "greenville"
+   ],
+   "candidates": [
+    {
+     "name": "Kyle Long",
+     "party": "Republican",
+     "url": "https://longfordistrict28.com/"
+    },
+    {
+     "name": "Thomas Sanders",
+     "party": "Democratic",
+     "url": "https://www.sandersforcountycouncil.com/"
+    }
+   ],
+   "about": "Sets the county budget and property tax rate, and decides on roads, zoning, and county services."
+  },
+  {
+   "id": "sb-gvl20",
+   "level": "school",
+   "title": "Greenville County School Board, District 20",
+   "where": "Greenville County. No party labels on the ballot.",
+   "counties": [
+    "greenville"
+   ],
+   "candidates": [
+    {
+     "name": "Bennie R Cantrell"
+    },
+    {
+     "name": "Robert Giles"
+    },
+    {
+     "name": "Chuck Saylors"
+    }
+   ],
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+  },
+  {
+   "id": "sb-gvl22",
+   "level": "school",
+   "title": "Greenville County School Board, District 22",
+   "where": "Greenville County. No party labels on the ballot.",
+   "counties": [
+    "greenville"
+   ],
+   "candidates": [
+    {
+     "name": "Leslie Fatum"
+    },
+    {
+     "name": "Lynda Leventis-Wells"
+    }
+   ],
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+  },
+  {
+   "id": "sb-gvl24",
+   "level": "school",
+   "title": "Greenville County School Board, District 24",
+   "where": "Greenville County. No party labels on the ballot.",
+   "counties": [
+    "greenville"
+   ],
+   "candidates": [
+    {
+     "name": "Anne M. Pressley"
+    }
+   ],
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "note": "Only one name on the ballot."
+  },
+  {
+   "id": "sb-gvl26",
+   "level": "school",
+   "title": "Greenville County School Board, District 26",
+   "where": "Greenville County. No party labels on the ballot.",
+   "counties": [
+    "greenville"
+   ],
+   "candidates": [
+    {
+     "name": "Amanda Brett"
+    },
+    {
+     "name": "Stephanie Meek"
+    }
+   ],
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools."
+  },
+  {
+   "id": "sb-gvl28",
+   "level": "school",
+   "title": "Greenville County School Board, District 28",
+   "where": "Greenville County. No party labels on the ballot.",
+   "counties": [
+    "greenville"
+   ],
+   "candidates": [
+    {
+     "name": "Jeff Cochran"
+    }
+   ],
+   "about": "Hires the superintendent, sets the school district budget, and makes rules for the district's schools.",
+   "note": "Only one name on the ballot."
+  },
+  {
+   "id": "greenville-soil-water",
+   "level": "county",
+   "title": "Greenville Soil and Water Conservation District",
+   "about": "Runs local programs that help landowners and farmers protect soil and water, like preventing erosion and flooding.",
+   "where": "Everyone in Greenville County votes on this. Pick up to 2. No party labels on the ballot.",
+   "counties": [
+    "greenville"
+   ],
+   "candidates": [
+    {
+     "name": "Christopher Hall"
+    },
+    {
+     "name": "Mike Stewart"
+    }
+   ],
+   "note": "Two seats, two names on the ballot."
   }
  ],
  "questions": [
@@ -1676,6 +2309,72 @@ window.GUIDE = {
    "plain": "The state lists a vote for this precinct on Nov. 3, but the question's wording wasn't posted anywhere we could find.",
    "yes": "See your sample ballot for the exact question.",
    "no": "See your sample ballot for the exact question."
+  },
+  {
+   "id": "q-gvl-1",
+   "title": "Greenville County sales tax for roads, buses, and parks",
+   "where": "Everyone in Greenville County votes on this.",
+   "plain": "Should Greenville County add a 1-cent sales tax (1 cent on each dollar of most purchases) for up to 8 years, or until it collects $1.1 billion? The money would pay for roads, streets, and bridges (up to $990 million), the county bus system (up to $33 million), and buying land or protecting it from development for parks, trails, wildlife, farms, forests, and clean water (up to $77 million).",
+   "yes": "The 1-cent county sales tax starts and pays for these projects.",
+   "no": "No new county sales tax for these projects.",
+   "counties": [
+    "greenville"
+   ]
+  },
+  {
+   "id": "q-gvl-2",
+   "title": "Greenville County borrowing for sales tax projects",
+   "where": "Everyone in Greenville County votes on this. It goes with the sales tax question above.",
+   "plain": "Should the county borrow up to $150 million to pay for the sales tax projects up front? The ballot says it would be paid back from the Question 1 sales tax within 8 years.",
+   "yes": "The county can borrow up to $150 million, to be repaid from the Question 1 sales tax.",
+   "no": "The county can't borrow this money.",
+   "counties": [
+    "greenville"
+   ]
+  },
+  {
+   "id": "q-city-gvl",
+   "title": "City of Greenville sales tax",
+   "where": "Only for people who live inside Greenville city limits.",
+   "plain": "Should the City of Greenville add a 1-cent sales tax for up to 8 years? Part of the money would lower city property taxes on owner-occupied homes. The rest, about $410 million, would pay for roads, drainage, sewer lines, fire stations, and public buildings.",
+   "yes": "The city adds the 1-cent sales tax, lowers city property taxes on owner-occupied homes, and pays for these projects.",
+   "no": "No new city sales tax.",
+   "counties": [
+    "greenville"
+   ]
+  },
+  {
+   "id": "q-city-mauldin",
+   "title": "City of Mauldin sales tax",
+   "where": "Only for people who live inside Mauldin city limits.",
+   "plain": "Should Mauldin add a 1-cent sales tax for up to 8 years? Part of the money would lower city property taxes on owner-occupied homes. The rest would pay for road repairs ($15.6 million) and a new fire station ($4 million). The city could also borrow up to $15.6 million and pay it back with the tax. If the sales tax doesn't bring in enough to repay it, city property taxes would cover the rest.",
+   "yes": "The city adds the 1-cent sales tax, lowers city property taxes on owner-occupied homes, pays for these projects, and can borrow up to $15.6 million.",
+   "no": "No new city sales tax.",
+   "counties": [
+    "greenville"
+   ]
+  },
+  {
+   "id": "q-city-simpsonville",
+   "title": "City of Simpsonville sales tax",
+   "where": "Only for people who live inside Simpsonville city limits.",
+   "plain": "Should Simpsonville add a 1-cent sales tax for up to 8 years? Part of the money would lower city property taxes on owner-occupied homes. The rest, $44.4 million, would pay for road repairs, drainage, curbs, and sidewalks.",
+   "yes": "The city adds the 1-cent sales tax, lowers city property taxes on owner-occupied homes, and pays for road work.",
+   "no": "No new city sales tax.",
+   "counties": [
+    "greenville"
+   ]
+  },
+  {
+   "id": "q-city-tr",
+   "title": "City of Travelers Rest sales tax",
+   "where": "Only for people who live inside Travelers Rest city limits.",
+   "plain": "Should Travelers Rest add a 1-cent sales tax for up to 8 years? Part of the money would lower city property taxes on owner-occupied homes. The rest, about $15.8 million, would pay for trails and sidewalks, parking, public gathering spaces, road repairs, and drainage.",
+   "yes": "The city adds the 1-cent sales tax, lowers city property taxes on owner-occupied homes, and pays for these projects.",
+   "no": "No new city sales tax.",
+   "counties": [
+    "greenville"
+   ]
   }
  ],
  "noStatewideQuestions": true,
@@ -1698,7 +2397,7 @@ window.GUIDE = {
   },
   {
    "q": "Something went wrong when I voted. Who do I call?",
-   "a": "<p>Call your county election office first. Anderson: <a href=\"tel:8642604035\">(864) 260-4035</a>. Spartanburg: <a href=\"tel:8645962549\">(864) 596-2549</a>. <a href=\"https://scvotes.gov/contact/county-voter-registration-election-offices/\" target=\"_blank\" rel=\"noopener\">Other counties</a>. The State Election Commission: <a href=\"tel:8037349060\">(803) 734-9060</a>.</p><p>Election Protection, a voter hotline run by civil rights groups, also helps: <a href=\"tel:8666878683\">866-OUR-VOTE</a>.</p>"
+   "a": "<p>Call your county election office first. Anderson: <a href=\"tel:8642604035\">(864) 260-4035</a>. Greenville: <a href=\"tel:8644677250\">(864) 467-7250</a>. Spartanburg: <a href=\"tel:8645962549\">(864) 596-2549</a>. <a href=\"https://scvotes.gov/contact/county-voter-registration-election-offices/\" target=\"_blank\" rel=\"noopener\">Other counties</a>. The State Election Commission: <a href=\"tel:8037349060\">(803) 734-9060</a>.</p><p>Election Protection, a voter hotline run by civil rights groups, also helps: <a href=\"tel:8666878683\">866-OUR-VOTE</a>.</p>"
   },
   {
    "q": "When will we know who won?",
@@ -1823,6 +2522,18 @@ window.GUIDE = {
   {
    "title": "SC Daily Gazette: Darline Graham wins GOP Senate nomination",
    "url": "https://scdailygazette.com/2026/08/25/darline-graham-wins-gop-nomination-for-next-us-senate-term-following-her-brothers-death/"
+  },
+  {
+   "title": "Greenville County Voter Registration & Elections",
+   "url": "https://www.greenvillecounty.org/VoterRegistration/"
+  },
+  {
+   "title": "Greenville County: 2026 early voting sites",
+   "url": "https://www.greenvillecounty.org/VoterRegistration/pdf/2026EarlyVotingSitesStatewideGeneral.pdf"
+  },
+  {
+   "title": "Greenville County: November 2026 ballot questions",
+   "url": "https://www.greenvillecounty.org/VoterRegistration/pdf/GreenvilleCounty1.pdf"
   }
  ],
  "instagram": "sgtkoala",

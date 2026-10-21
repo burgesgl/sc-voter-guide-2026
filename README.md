@@ -1,6 +1,6 @@
 # Upstate Voter Guide 2026
 
-A plain-language, nonpartisan guide to South Carolina's Nov. 3, 2026 general election, focused on Anderson and Spartanburg counties.
+A plain-language, nonpartisan guide to South Carolina's Nov. 3, 2026 general election, focused on Anderson, Greenville, and Spartanburg counties.
 
 - **Make a plan:** pick your county and how you'll vote; get dates, places, what to bring, and a calendar reminder.
 - **See your ballot:** every candidate in ABC order, with a one-line description of what each office does.
