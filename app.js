@@ -50,12 +50,12 @@
   function renderStatus() {
     var t = todaySC(), ev = G.earlyVoting, ed = G.election.date, left = daysBetween(t, ed), msg;
     if (left < 0) msg = "Election Day has passed. Results are at " + link("https://scvotes.gov", "scVOTES.gov") + ".";
-    else if (left === 0) msg = "<strong>Today is Election Day.</strong> Polls are open " + esc(G.election.hours) + ". In line by 7? You can still vote.";
+    else if (left === 0) msg = "<strong>Today is Election Day.</strong> Polls are open " + esc(G.election.hours) + " In line by 7? You can still vote.";
     else if (t < ev.start) msg = "<strong>" + left + " days to go.</strong> Early voting opens " + esc(fmtLong(ev.start)) + ".";
     else if (t <= ev.end) {
       var open = ev.days.indexOf(t) !== -1;
       msg = "<strong>" + (open ? "You can vote early today." : "Early voting is going on now.") + "</strong> It ends " + esc(fmtLong(ev.end)) + ".";
-    } else msg = "<strong>Early voting is over.</strong> Vote " + esc(fmtLong(ed)) + ", " + esc(G.election.hours) + ".";
+    } else msg = "<strong>Early voting is over.</strong> Vote " + esc(fmtLong(ed)) + ", " + esc(G.election.hours);
     $("status").innerHTML = msg;
   }
 
@@ -90,7 +90,7 @@
   function methodOptions() {
     var t = todaySC(), ev = G.earlyVoting, ab = G.absentee, out = [];
     if (t <= ev.end) out.push({ value: "early", label: "Vote early, in person", hint: "Now through " + fmtLong(ev.end) + ". Anyone can." });
-    out.push({ value: "eday", label: "Vote on Election Day", hint: fmtLong(G.election.date) + ", " + G.election.hours + "." });
+    out.push({ value: "eday", label: "Vote on Election Day", hint: fmtLong(G.election.date) + ", " + G.election.hours });
     out.push({ value: "absentee", label: "Vote by mail", hint: "Only for some voters. " + (t <= ab.applyBy ? "Ask for a ballot by " + fmtLong(ab.applyBy) + "." : "It's too late to ask for one.") });
     return out;
   }
@@ -130,7 +130,7 @@
       sub = fmtLong(G.election.date) + ", " + G.election.hours;
       steps.push(reg);
       steps.push({ h: "Go to your own polling place", b: "<p>On Election Day you have to vote at your assigned spot. " + link(L.pollingPlace, "Find my polling place") + "</p>" });
-      steps.push({ h: "Get in line by " + G.election.close, b: "<p>Polls are open " + esc(G.election.hours) + ". If you're in line when they close, stay. You still get to vote.</p>" });
+      steps.push({ h: "Get in line by " + G.election.close, b: "<p>Polls are open " + esc(G.election.hours) + " If you're in line when they close, stay. You still get to vote.</p>" });
     } else {
       var ab = G.absentee, late = t > ab.applyBy;
       title = "Vote by mail";
@@ -208,7 +208,7 @@
   function planText() {
     var m = state.method, c = G.counties[state.county], s;
     if (m === "early") s = "I'm voting early" + (state.evDay ? " on " + fmtLong(state.evDay) : "") + (c ? " in " + c.name + " County" : "") + ". Early voting is open through " + fmtLong(G.earlyVoting.end) + ", 8:30 a.m. to 6 p.m.";
-    else if (m === "eday") s = "I'm voting on Election Day, " + fmtLong(G.election.date) + ". Polls are open " + G.election.hours + ".";
+    else if (m === "eday") s = "I'm voting on Election Day, " + fmtLong(G.election.date) + ". Polls are open " + G.election.hours;
     else s = "I'm voting by mail. Ballots have to arrive by " + G.absentee.returnTime + " on " + md(G.absentee.returnBy) + ".";
     return s + " Bring a photo ID. Make your own plan here: " + location.href.split("#")[0];
   }
