@@ -1752,6 +1752,10 @@ window.GUIDE = {
    {
     "title": "South Carolina news",
     "url": "https://ground.news/interest/south-carolina"
+   },
+   {
+    "title": "Greenville news",
+    "url": "https://ground.news/interest/greenville-south-carolina"
    }
   ]
  },
@@ -1839,5 +1843,15 @@ window.GUIDE = {
    "date": "2026-11-03",
    "label": "Election Day, 7 a.m. to 7 p.m."
   }
- ]
+ ],
+ "groundNews": {
+  "url": "https://ground.news",
+  "title": "Read the news from more than one side",
+  "blurb": [
+   "Ground News is a news website and app. It gathers articles about the same story from many different news outlets and puts them side by side.",
+   "It labels each outlet as leaning left, center, or right, using ratings from three outside groups: AllSides, Ad Fontes Media, and Media Bias/Fact Check. It also rates how factual each outlet tends to be and shows who owns it.",
+   "It's a quick way to see how the same news gets told differently, and to spot stories that one side is mostly ignoring."
+  ],
+  "note": "This guide isn't connected to Ground News."
+ }
 };

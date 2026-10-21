@@ -50,6 +50,10 @@
   }
   function link(url, text) { return '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(text) + "</a>"; }
   function $(id) { return document.getElementById(id); }
+  function countyList() {
+    var n = Object.keys(G.counties).map(function (k) { return G.counties[k].name; });
+    return n.length < 3 ? n.join(" and ") : n.slice(0, -1).join(", ") + ", and " + n[n.length - 1];
+  }
 
   /* ---------- header status ---------- */
   function renderStatus() {
@@ -246,7 +250,7 @@
     }).join("");
     var hint = $("county-hint"), co = G.counties[state.county];
     hint.innerHTML = co ? "Showing races for <b>" + esc(co.name + " County") + "</b>. " + '<a href="#plan">Change</a>' :
-      'Showing Anderson and Spartanburg counties. <a href="#plan">Pick your county</a> to narrow it down.';
+      "Showing " + esc(countyList()) + ' counties. <a href="#plan">Pick your county</a> to narrow it down.';
   }
   function initials(n) {
     var w = n.replace(/["“”].*?["“”]/g, "").replace(/\b(Jr|Sr|II|III|IV)\.?$/i, "").trim().split(/\s+/).filter(function (x) { return x.length > 1 || /[A-Z]/.test(x); });
@@ -339,10 +343,13 @@
         s.points.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") + '</ul><p class="reads">' +
         s.links.map(function (l) { return link(l.url, l.title); }).join("") + "</p></div>";
     }).join("");
-    if (C.coverage && C.coverage.length) {
-      $("coverage").innerHTML = '<div class="coverage"><h3>See how different news outlets cover it</h3>' +
-        "<p>Ground News puts stories from left, center, and right news sources side by side, so you can compare.</p><ul>" +
-        C.coverage.map(function (l) { return "<li>" + link(l.url, l.title) + "</li>"; }).join("") + "</ul></div>";
+    var GN = G.groundNews;
+    if (GN) {
+      $("coverage").innerHTML = '<div class="gn-card"><div class="gn-head">' + icon("news", 24) + "<h3>" + esc(GN.title) + "</h3></div>" +
+        GN.blurb.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") +
+        '<a class="btn gn-btn" href="' + esc(GN.url) + '" target="_blank" rel="noopener">Open Ground News' + icon("next", 18) + "</a>" +
+        (C.coverage && C.coverage.length ? '<p class="gn-topics">Jump to a topic: ' + C.coverage.map(function (l) { return link(l.url, l.title); }).join(" · ") + "</p>" : "") +
+        '<p class="fine">' + esc(GN.note) + "</p></div>";
     }
   }
   function renderFAQ() {
